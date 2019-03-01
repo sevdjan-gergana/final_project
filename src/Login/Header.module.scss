@@ -1,0 +1,26 @@
+.Header{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size:2em;
+    background-color: #eeecdf;
+    padding: 10px;
+    border-bottom: 2px solid #eeede8;
+
+    .Logo{
+        width: 180px;
+    }
+
+    .Login{
+        input{
+            height: 27px;
+            width: 130px;
+            border: 1px solid lightgray;
+            border-radius: 3px;
+            margin: 5px;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+    }
+}
+
