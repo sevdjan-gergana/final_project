@@ -20,7 +20,7 @@ class App extends Component {
   }
 
   render() {
-    const isLogged = this.state.user;
+    const isLogged = true; //this.state.user;
 
     const profileRoute = !isLogged ?
       <Route path='/profile' render={() => (<Redirect to='/' />)} />

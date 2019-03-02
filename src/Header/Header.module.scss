@@ -1,25 +1,79 @@
 .Header{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    font-size:2em;
     background-color: #eeecdf;
-    padding: 10px;
-    border-bottom: 2px solid #eeede8;
+    height: 50px;
 
-    .Logo{
-        width: 180px;
+    .Wrapper{
+        width: 80%;
+        height: 100%;
+        margin: 0px auto;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size:2em;
+        box-sizing: border-box;
+        border-bottom: 2px solid #eeede8;
     }
 
-    .Login{
+    .Logo{
+        margin-top: 10px;
+        width: 160px;
+    }
+
+    .NavButtons{
+        height: 50px;
+    }
+
+    .NavButtons > Button{
+        position: relative;
+        top: -5px;
+        height: 100%;
+        width: 110px;
+        margin: 0px;
+        border-radius: 0px;
+        background-color: #eeecdf;
+        border: none;
+        color: #382110;
+        font-size: 0.5em;
+    }
+
+    .NavButtons > Button:hover{
+        color: white;
+        background-color: #382110;
+    }
+
+    .Search{
+        position: relative;
+        top: -3px;
         input{
-            height: 27px;
-            width: 130px;
+            width: 400px;
+            height: 33px;
             border: 1px solid lightgray;
             border-radius: 3px;
-            margin: 5px;
+            
             padding: 5px;
             box-sizing: border-box;
+        }
+    }
+    .Profile{
+        padding: 0px 5px;
+        box-sizing: border-box;
+
+        .User{
+            margin-top: 10px;
+            box-sizing: border-box;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 1px solid lightgray;
+        }
+
+    }
+
+    .Profile:hover{
+        background-color: #382110;
+        cursor: pointer;
+        .User{
+            border: 1px solid #382110;
         }
     }
 }
