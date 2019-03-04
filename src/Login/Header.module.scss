@@ -9,7 +9,9 @@
 
     .Logo{
         width: 180px;
+        float:left;
     }
+
 
     .Login{
         input{
@@ -22,5 +24,48 @@
             box-sizing: border-box;
         }
     }
+
+ 
+    
 }
 
+.Main{
+    display: flex;
+    align-items: center;
+
+}
+
+.background{
+    width: 100%;
+}
+
+.backgroundWords{
+    margin-top:2%;
+    position:absolute;
+    width:30%;
+    left:30%;
+}
+
+.Register{
+    display:flex;
+    position:absolute;
+    flex-direction: column;
+    margin-top:10%;
+    left:30%;
+    align-items: center;
+    
+    input{
+        height: 40px;
+        width: 100%;
+        border: 1px solid lightgray;
+        border-radius: 3px;
+        margin: 5px;
+        padding: 5px;
+        box-sizing: border-box;
+        
+    }
+    .regP{
+        font-size: 1.3em;
+        align-content: center;
+    }
+}
