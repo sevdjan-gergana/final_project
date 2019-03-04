@@ -44,9 +44,6 @@ class HeaderComponent extends React.Component {
                 </div>
                 <Footer/>
                 </header>
-                
-           
-            
             
         );
     }
