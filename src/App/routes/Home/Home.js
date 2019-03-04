@@ -1,5 +1,4 @@
 import React from 'react';
-import BookListComponent from '../../../BookList/BookList.js';
 
 class HomeComponent extends React.Component {
 
@@ -33,33 +32,33 @@ class HomeComponent extends React.Component {
             }).catch(e => console.log(e))
 
 
-        // fetch(`https://www.googleapis.com/books/v1/volumes/sUcrAQAAIAAJ`, {
-        //     cache: 'no-cache',
-        //     headers: {
-        //         'Accept': 'application/json',
-        //     },
-        //     method: 'GET',
-        //     mode: 'cors'
-        // })
-        //     .then((response) => {
-        //         if (response.ok) {
-        //             return response.json()
-        //         }
+        fetch(`https://www.googleapis.com/books/v1/volumes/sUcrAQAAIAAJ`, {
+            cache: 'no-cache',
+            headers: {
+                'Accept': 'application/json',
+            },
+            method: 'GET',
+            mode: 'cors'
+        })
+            .then((response) => {
+                if (response.ok) {
+                    return response.json()
+                }
 
-        //         return Promise.reject({
-        //             status: response.status,
-        //             messagePromise: response.json()
-        //         });
-        //     }).then(data => {
-        //         console.log(data);
-        //     }).catch(e => console.log(e))
+                return Promise.reject({
+                    status: response.status,
+                    messagePromise: response.json()
+                });
+            }).then(data => {
+                console.log(data);
+            }).catch(e => console.log(e))
     }
 
     render() {
         return (
             <div>HOME
 
-            <BookListComponent bookList={this.state.books} />
+            {/* <BookListComponent book={this.state.books} /> */}
             </div>
         );
     }

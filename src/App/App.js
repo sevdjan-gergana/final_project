@@ -20,7 +20,7 @@ class App extends Component {
   }
 
   render() {
-    const isLogged = this.state.user;
+    const isLogged = true; //this.state.user;
 
     const profileRoute = !isLogged ?
       <Route path='/profile' render={() => (<Redirect to='/' />)} />
@@ -29,9 +29,9 @@ class App extends Component {
 
     return (
       <div>
+        {isLogged ? <HeaderComponent /> : <LoginComponent onLogin={this.login} />}
         <BrowserRouter>
           <div>
-            {isLogged ? <HeaderComponent /> : <LoginComponent onLogin={this.login} />}
             <Route exact path={`/`} component={withRouter(HomeComponent)} />
             <Route path={`/book/:id`} component={withRouter(BookDetailsComponent)} />
             {profileRoute}

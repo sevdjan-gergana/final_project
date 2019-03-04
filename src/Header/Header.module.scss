@@ -23,11 +23,7 @@
         height: 50px;
     }
 
-    a:-webkit-any-link {
-        text-decoration: none;
-    }
-
-    .NavButtons Button{
+    .NavButtons > Button{
         position: relative;
         top: -3px;
         height: 100%;
@@ -40,7 +36,7 @@
         font-size: 0.5em;
     }
 
-    .NavButtons Button:hover{
+    .NavButtons > Button:hover{
         color: white;
         background-color: #382110;
     }
@@ -55,7 +51,6 @@
             border-radius: 3px;
             padding: 5px;
             box-sizing: border-box;
-            outline-color: #c1b7a5;
         }
     }
     .Profile{
