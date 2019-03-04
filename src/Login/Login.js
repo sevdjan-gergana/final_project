@@ -3,7 +3,12 @@ import logo from '../assets/images/logo.png';
 import classes from './Header.module.scss';
 import Button from '../UI/Button/Button.js';
 import background from '../assets/images/background-book.jpg';
-import backgroundWords from '../assets/images/title.png'
+import backgroundWords from '../assets/images/title.png';
+import Footer from '../assets/Footer/Footer';
+
+
+
+
 
 
 
@@ -13,6 +18,7 @@ class HeaderComponent extends React.Component {
     render() {
         const myStyle={backgroundColor: 'rgb(255, 213, 109)',width:'90px',fontSize:'1em',border:'none', height:'40px', color: '#382110'};
         return (
+           <React.Fragment>
             <header>
                 <div className={classes.Header}>
                 <img className={classes.Logo} src={logo} alt="logo" />
@@ -43,7 +49,10 @@ class HeaderComponent extends React.Component {
                 <img className={classes.background} src={background}  height='500px' alt="logo" />
                 </div>
                 </header>
-                
+
+              <Footer/>
+              
+                </React.Fragment>
            
             
            

@@ -20,7 +20,7 @@ class App extends Component {
   }
 
   render() {
-    const isLogged = true;
+    const isLogged = false; //this.state.user;
 
     const profileRoute = !isLogged ?
       <Route path='/profile' render={() => (<Redirect to='/' />)} />
@@ -39,6 +39,7 @@ class App extends Component {
           </div>
         </BrowserRouter>
       </div>
+      
     );
   }
 }

@@ -29,6 +29,7 @@ class HomeComponent extends React.Component {
                 this.setState({
                     books: data
                 })
+                
             }).catch(e => console.log(e))
 
 
