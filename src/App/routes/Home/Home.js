@@ -1,4 +1,6 @@
 import React from 'react';
+import Footer from '../../../Footer/Footer';
+
 
 class HomeComponent extends React.Component {
 
@@ -28,7 +30,7 @@ class HomeComponent extends React.Component {
                 this.setState({
                     books: data
                 })
-                
+
             }).catch(e => console.log(e))
 
 
@@ -57,8 +59,9 @@ class HomeComponent extends React.Component {
     render() {
         return (
             <div>HOME
-
-            {/* <BookListComponent book={this.state.books} /> */}
+                {/* <BookListComponent book={this.state.books} /> */}
+              
+                <Footer />
             </div>
         );
     }
