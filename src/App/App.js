@@ -8,19 +8,9 @@ import BookDetailsComponent from './routes/Book/Book';
 import ProfileComponent from './routes/Profile/Profile';
 
 class App extends Component {
-  state = {
-    user: localStorage.user
-  }
-
-  login = () => {
-    localStorage.user = 'magic';
-    this.setState({
-      user: localStorage.user
-    })
-  }
 
   render() {
-    const isLogged = false; //this.state.user;
+    const isLogged = sessionStorage.getItem('user') !== null;
 
     const profileRoute = !isLogged ?
       <Route path='/profile' render={() => (<Redirect to='/' />)} />

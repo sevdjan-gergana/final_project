@@ -1,28 +1,24 @@
 .Footer{
-    display:flex;
-    margin: 0px auto;
     background-color: rgb(243, 234, 217);
-    padding: 20px;
-    border-bottom: 2px solid #eeede8;
-    // flex-direction:row;
-    justify-content: space-between;
     color: rgb(111, 94, 80);
     font-size: 0.7em;
-    h3{
-        display:inline;
-        margin: 0px 20px;
+    margin: 0px auto;
+
+    .Buttons{
+        display: flex;
+        justify-content: space-around;
+        margin: 0px 10%;
+    }
+
+    .Buttons > button{
+        background-color:rgb(243, 234, 217);
+        border:none;
+        color: black;
+        width: 130px;
+    }
+    .Buttons > button:hover{
+        background-color:rgb(239, 253, 199);
+        border-color: rgb(255, 234, 204);
     }
 }
 
-.Column{
-    margin: 0px auto;   
-}
-
-.rights{
-    
-    display:block;
-    float:left;
-    p{
-        display: block;
-    }
-}

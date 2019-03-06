@@ -1,23 +1,23 @@
 import React from 'react';
 import classes from './Footer.module.scss';
+import Button from '../UI/Button/Button.js';
 
 class FooterComponent extends React.Component {
     render() {
         return (
             <footer className={classes.Footer}>
-                <div className={classes.Column}>
-                    <h3>About us</h3>
-                    <h3>Careers</h3>
-                    <h3>Terms</h3>
-                    <h3>Privacy</h3>
-                    <h3>Authors</h3>
-                    <h3>Advertise</h3>
-                    <h3>Authors & ads blog</h3>
-                    <h3>API</h3>
+                <hr />
+                <div className={classes.Buttons}>
+                    <Button type="button" title="About us"></Button>
+                    <Button type="button"  title="Careers"></Button>
+                    <Button type="button"  title="Terms"></Button>
+                    <Button type="button"  title="Privacy"></Button>
+                    <Button type="button"  title="Authors"></Button>
+                    <Button type="button"  title="Advertise"></Button>
+                    <Button type="button"  title="Authors & ads blog"></Button>
+                    <Button type="button"  title="API"></Button>
                 </div>
-                <div className={classes.rights}>
-                    <p>© 2019 Goodreads, Inc.</p>
-                </div>
+                <p>© 2019 Gergana and Sevdjan</p>
             </footer>
         )
     }

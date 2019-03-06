@@ -24,7 +24,7 @@
         height: 50px;
     }
 
-    .NavButtons > Button{
+    .NavButtons Button{
         position: relative;
         top: -3px;
         height: 100%;
@@ -37,9 +37,12 @@
         font-size: 0.5em;
     }
 
-    .NavButtons > Button:hover{
+    .NavButtons Button:hover{
         color: white;
         background-color: #382110;
+    }
+    a{
+        text-decoration: none;
     }
 
     .Search{
@@ -57,7 +60,7 @@
     .Profile{
         padding: 0px 5px;
         box-sizing: border-box;
-
+        cursor: pointer;
         .User{
             margin-top: 10px;
             box-sizing: border-box;
@@ -70,10 +73,23 @@
 
     .Profile:hover{
         background-color: #382110;
-        cursor: pointer;
         .User{
             border: 1px solid #382110;
         }
+    }
+
+    .LogoutButton{
+        padding: 5px 10px;
+        box-sizing: border-box;
+        cursor: pointer;
+        .Logout{
+            width: 25px;
+        }
+    }
+
+    .LogoutButton:hover{
+        padding: 5px 10px;
+        background-color: #382110;
     }
 }
 

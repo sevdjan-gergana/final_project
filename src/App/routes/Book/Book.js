@@ -1,10 +1,14 @@
 import React from 'react';
+import Footer from '../../../Footer/Footer';
 
 class BookDetailsComponent extends React.Component {
 
     render() {
         return (
-            <div>Book</div>
+            <React.Fragment>
+                <div>Book</div>
+                <Footer />
+            </React.Fragment>
         );
     }
 }
