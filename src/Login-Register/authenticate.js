@@ -4,10 +4,12 @@ import background from '../assets/images/background-book.jpg';
 import backgroundWords from '../assets/images/title.png';
 import Register from './Register';
 
+
 export default class AuthenticateComponent extends React.Component {
     render() {
         return (
             <React.Fragment>
+              
                 < div >
                     <div >
                         <img className={classes.backgroundWords} src={backgroundWords} alt='Meet your next favourite book'>
@@ -16,6 +18,7 @@ export default class AuthenticateComponent extends React.Component {
                     </div>
                     <img className={classes.background} src={background} height='500px' alt="logo" />
                 </div>
+                
             </React.Fragment>
         );
     }

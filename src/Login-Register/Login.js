@@ -5,6 +5,8 @@ import classes from './Login.module.scss';
 import Authenticate from './authenticate';
 import Button from '../UI/Button/Button.js';
 import Input from '../UI/Input/Input.js';
+import BookList from '../BookList/BookList';
+import Footer from '../Footer/Footer';
 
 
 
@@ -50,7 +52,9 @@ class HeaderComponent extends React.Component {
             window.location.reload();
         }
         return (
+            <div className={classes.Container}>
             <React.Fragment>
+                
                 <div className={classes.Header}>
                     <img className={classes.Logo} src={logo} alt="logo" />
 
@@ -63,7 +67,12 @@ class HeaderComponent extends React.Component {
                     </div>
                 </div>
                 <Authenticate />
+                <BookList/>
+           
+            <Footer/>
+           
             </React.Fragment>
+            </div>
         );
     }
 }
