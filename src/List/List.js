@@ -6,7 +6,7 @@ import classes from '../List/BookCard.module.scss';
 const List = (props) => {
 
     return (
-        <div >
+        <div className={classes.container}>
             {props.books.map((book, i) => {
                 return <div className={classes.book}>
                     <BookCard
