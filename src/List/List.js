@@ -1,6 +1,7 @@
 import React from 'react';
 import BookCard from '../List/BookCard';
 import classes from '../List/BookCard.module.scss'
+import classes from '../List/BookCard.module.scss';
 
 
 const List = (props) => {
