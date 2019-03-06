@@ -54,7 +54,6 @@ class HeaderComponent extends React.Component {
             // this.props.history.push('/');
         }
         return (
-            <div className={classes.Container}>
             <React.Fragment>
                 
                 <div className={classes.Header}>
