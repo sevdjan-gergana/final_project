@@ -48,8 +48,6 @@ class HeaderComponent extends React.Component {
     render() {
         if (this.state.toNav) {
             window.location.reload();
-            // return <Redirect to='/profile' />
-            // this.props.history.push('/');
         }
         return (
             <React.Fragment>

@@ -1,10 +1,10 @@
 .Footer{
-    position: relative;
+    // position: relative;
     background-color: rgb(243, 234, 217);
     color: rgb(111, 94, 80);
     font-size: 0.7em;
     margin: 0px auto;
-    top: 70vh;
+    // top: 70vh;
 
     .Buttons{
         display: flex;
@@ -19,8 +19,9 @@
         width: 130px;
     }
     .Buttons > button:hover{
-        background-color:white;
-        border-color: rgb(255, 234, 204);
+        text-decoration: underline;
+        // border-bottom: 1px double #5e1b17;
+        
     }
     .Rights{
         width: 100vw;

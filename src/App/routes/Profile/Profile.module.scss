@@ -9,4 +9,16 @@
         width: 150px;
         border-radius: 50%;
     }
+    .UserInfo{
+        color: #5e1b17;
+        h2{
+            text-transform: capitalize;
+            font-family: Georgia, Times, 'Times New Roman', serif;
+        }
+        p{
+            text-transform: uppercase;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+    }
 }
