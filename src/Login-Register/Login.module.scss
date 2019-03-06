@@ -1,0 +1,14 @@
+.Header{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size:2em;
+    background-color:rgb(243, 234, 217);
+    padding: 10px;
+    border-bottom: 2px solid rgb(137, 101, 75);
+
+    .Logo{
+        width: 180px;
+    }
+}
+

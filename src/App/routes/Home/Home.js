@@ -1,4 +1,6 @@
 import React from 'react';
+import Footer from '../../../Footer/Footer';
+
 
 import HeaderComponent from '../../../Header/Header';
 import BookList from '../../../BookList/BookList';
@@ -68,8 +70,9 @@ class HomeComponent extends React.Component {
             
 <React.Fragment>
             <div>HOME
-
-            {/* <BookListComponent book={this.state.books} /> */}
+                {/* <BookListComponent book={this.state.books} /> */}
+              
+                <Footer />
             </div>
             <HeaderComponent/>
             <BookList/>
