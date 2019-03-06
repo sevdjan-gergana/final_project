@@ -50,8 +50,6 @@ class HeaderComponent extends React.Component {
     render() {
         if (this.state.toNav) {
             window.location.reload();
-            // return <Redirect to='/profile' />
-            // this.props.history.push('/');
         }
         return (
            
@@ -68,8 +66,9 @@ class HeaderComponent extends React.Component {
                         </form>
                     </div>
                 </div>
-                <Authenticate />
                 </div>
+
+                <Authenticate />          
             </React.Fragment>
             
         );

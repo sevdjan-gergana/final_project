@@ -4,7 +4,6 @@ import logo from '../assets/images/logo.png';
 import profileLogo from '../assets/images/user.png';
 import logout from '../assets/images/logout.png';
 import Button from '../UI/Button/Button.js';
-import BookList from '../BookList/BookList';
 import SearchArea from '../UI/SearchArea/SearchArea';
 import classes from './Header.module.scss';
 
@@ -26,7 +25,6 @@ class HeaderComponent extends React.Component {
     render() {
         if (this.state.toHome) {
             window.location.reload();
-            // return <Redirect to='/profile' />
         }
 
         return (
@@ -43,7 +41,7 @@ class HeaderComponent extends React.Component {
                         {/* <SearchArea handleSearch={this.handleSearch}/> */}
                     </div>
                     <NavLink to='/profile' ><div className={classes.Profile}><img className={classes.User} src={profileLogo} alt="profile" /></div></NavLink>
-                    <NavLink to='/' ><div className={classes.LogoutButton} onClick={this.logout}><img className={classes.Logout} src={logout} alt="logout" /></div></NavLink>
+                    <div className={classes.LogoutButton} onClick={this.logout}><img className={classes.Logout} src={logout} alt="logout" /></div>
                 </div>
             </header >
         );

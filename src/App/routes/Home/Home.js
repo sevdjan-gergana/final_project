@@ -1,8 +1,5 @@
 import React from 'react';
 import Footer from '../../../Footer/Footer';
-
-
-import HeaderComponent from '../../../Header/Header';
 import BookList from '../../../BookList/BookList';
 
 class HomeComponent extends React.Component {
@@ -35,7 +32,7 @@ class HomeComponent extends React.Component {
     //             this.setState({
     //                 books: data
     //             })
-                
+
     //         }).catch(e => console.log(e))
 
 
@@ -62,22 +59,19 @@ class HomeComponent extends React.Component {
     // }
 
     render() {
-     
+
         return (
             // {books.map(book=>(
             //     <li key={book.name}>{book.name} </li>
             // ))}
-            
-<React.Fragment>
-            
-            
-            <div>HOME
-                {/* <BookListComponent book={this.state.books} /> */}
-              
-            </div>
-            <BookList/>
-            <Footer />
 
+            <React.Fragment>
+                <div>HOME
+                {/* <BookListComponent book={this.state.books} /> */}
+
+                </div>
+                <BookList />
+                <Footer />
             </React.Fragment>
         );
     }

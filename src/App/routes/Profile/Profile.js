@@ -4,10 +4,6 @@ import classes from './Profile.module.scss';
 import userLogo from '../../../assets/images/user.png';
 
 class ProfileComponent extends React.Component {
-    // state = {
-    //     myBooks: localStorage.mybooks
-    // }
-
     // addme = () => {
     //     localStorage.myBooks = 'sada'
     //     this.setState({ myBooks: 'asdasd' })
@@ -17,15 +13,16 @@ class ProfileComponent extends React.Component {
         super(props);
         this.state = {
             username: '',
-            shelves: [],
+            shelves: {},
         };
     }
 
     componentDidMount() {
         const user = JSON.parse(window.sessionStorage.getItem("user"));
-        console.log(user);
         const { username, shelves } = user;
-        this.setState({ username , shelves });
+        this.setState({ username, shelves });
+        console.log(user);
+        console.log(shelves);
     }
 
     render() {
@@ -33,10 +30,15 @@ class ProfileComponent extends React.Component {
             <React.Fragment>
                 <div className={classes.Wrapper}>
                     <div><img className={classes.userLogo} src={userLogo} alt="userLogo"></img></div>
-                    <div>
+                    <div className={classes.UserInfo}>
                         <h2>{this.state.username}</h2>
                         <hr />
-                        <p>info</p>
+                        <p>{this.state.username}'s bookshelves</p>
+                        <ul>
+                            {/* <li>read‎: ({this.state.shelves.read.length})</li>
+                            <li>currently-reading‎: ({this.state.shelves})</li>
+                            <li>to-read‎: ({this.state.shelves})</li>  */}
+                        </ul>
                     </div>
                 </div>
                 <Footer />

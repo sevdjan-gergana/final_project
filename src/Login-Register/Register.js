@@ -14,7 +14,7 @@ class RegisterComponent extends React.Component {
             passError: false,
             emailError: false,
         };
-        
+
         this.handleUserInput = this.handleUserInput.bind(this);
         this.register = this.register.bind(this);
     }
@@ -47,8 +47,9 @@ class RegisterComponent extends React.Component {
     register(e) {
         e.preventDefault();
         const { username, password, email } = this.state;
-        let userinfo = JSON.stringify({ username, password, email, shelves: [] });
-        window.localStorage.setItem( username , userinfo );
+        let userinfo = JSON.stringify({ username, password, email, 
+                                        shelves: { "read": [1,2], "reading": [3], "will": [4,5] } });
+        window.localStorage.setItem(username, userinfo);
 
     }
 
