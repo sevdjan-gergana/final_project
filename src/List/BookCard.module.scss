@@ -1,0 +1,55 @@
+
+
+.container{
+    width:74%;
+    margin: auto;
+    justify-content: space-between;
+    display: flex;
+   
+  
+}
+
+
+.book{
+
+  
+   display:inline-block;
+   margin:10px;
+   width:17%;
+   height: 43%;
+  overflow: hidden;
+  background-color:white;
+    border-radius: 8px;
+
+}
+.titleBox{
+    width:100%;
+    height: 13%;
+    overflow: hidden;
+    margin:0 5px ;
+}
+.title{
+    
+    font-size:1em;
+    margin: 0 auto;
+    
+}
+
+.imgBox{
+    margin-top:5px;
+    width:90%;
+    height: 70%;
+    overflow: hidden;
+    margin: 10px auto;
+}
+.img{
+    margin: 0 auto;
+    height:100%;
+    width:100%;
+}
+
+
+
+h3{
+    margin: 0 auto;
+}

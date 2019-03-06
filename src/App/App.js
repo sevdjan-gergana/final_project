@@ -10,7 +10,7 @@ import ProfileComponent from './routes/Profile/Profile';
 class App extends Component {
 
   render() {
-    const isLogged =false; //this.state.user;
+    const isLogged =sessionStorage.getItem('user')!==null;
 
     const profileRoute = !isLogged ?
       <Route path='/profile' render={() => (<Redirect to='/' />)} />

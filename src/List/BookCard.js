@@ -1,20 +1,33 @@
 import React from 'react';
+import BookList from '../BookList/BookList';
+import classes from '../List/BookCard.module.scss'
 
 
 
 const BookCard=(props)=>{
+    
+    
     return(
-        <div className='card-container'>
-        <img src={props.image} alt=''/>
-        <div className='desc'>
-        <h2>{props.title}</h2>
+       
+       <React.Fragment>
+       <div className={classes.imgBox}>
+        <img className={classes.img} src={props.image} alt=''/>
+        </div>
+        <div className={classes.titleBox}>
+        <h2  className={classes.title} >{props.title}</h2>
+        </div>
+        
         <h3>{props.authors}</h3>
+        <div className={classes.published}>
         <p>{props.published}</p>
         </div>
-      
+    
 
-        </div>
+        
+        
+        </React.Fragment>
     )
+
 }
 
 export default BookCard; 

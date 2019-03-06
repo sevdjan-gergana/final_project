@@ -7,6 +7,7 @@ import backgroundWords from '../assets/images/title.png';
 import Footer from '../Footer/Footer';
 import Input from '../UI/Input/Input';
 import Home from '../HomePage/Home';
+import BookList from '../BookList/BookList';
 
 
 
@@ -15,7 +16,7 @@ import Home from '../HomePage/Home';
 class HeaderComponent extends React.Component {
 
     render() {
-        const options=[{title:'book1'},{title:'book2'},{title:'book3'}];
+      
         const myStyle={backgroundColor: 'rgb(255, 213, 109)',width:'90px',fontSize:'1em',border:'none', height:'40px', color: '#382110'};
         return (
             <header>
@@ -45,13 +46,16 @@ class HeaderComponent extends React.Component {
                     <Button style={myStyle} title="Sign up" width='100px'></Button>
                     </div>
                 </div>
-                <img className={classes.background} src={background}  height='500px' alt="logo" />
+                {/* <img className={classes.background} src={background}  height='500px' alt="logo" /> */}
                 </div>
                 
                     <form>
                        
                         <Home/>
               </form>
+              <BookList/>
+           
+            <Footer />
                 <Footer/>
                 </header>
             

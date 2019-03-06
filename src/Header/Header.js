@@ -35,7 +35,7 @@ class HeaderComponent extends React.Component {
                     <div className={classes.Search}>
                    {/* <input type='text' placeholder='Enter type of book'></input>
                         <Button title="Search" /> */}
-                        <SearchArea handleSearch={this.handleSearch}/>
+                        {/* <SearchArea handleSearch={this.handleSearch}/> */}
                     </div>
                     <NavLink to='/profile' ><div className={classes.Profile}><img className={classes.User} src={profileLogo} alt="profile" /></div></NavLink>
                     <NavLink to='/' ><div className={classes.LogoutButton} onClick={this.logout}><img className={classes.Logout} src={logout} alt="logout" /></div></NavLink>
