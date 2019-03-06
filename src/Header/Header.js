@@ -4,7 +4,8 @@ import logo from '../assets/images/logo.png';
 import profileLogo from '../assets/images/user.png';
 import logout from '../assets/images/logout.png';
 import Button from '../UI/Button/Button.js';
-import Input from '../UI/Input/Input.js';
+import BookList from '../BookList/BookList';
+import SearchArea from '../UI/SearchArea/SearchArea';
 import classes from './Header.module.scss';
 
 
@@ -37,8 +38,9 @@ class HeaderComponent extends React.Component {
                         <NavLink to='/book/:id'> <Button className={classes.Buttons} title="My Books" /></NavLink>
                     </div>
                     <div className={classes.Search}>
-                        <Input type="text" placeholder="Search books"></Input>
-                        <Button title="Search" />
+                   {/* <input type='text' placeholder='Enter type of book'></input>
+                        <Button title="Search" /> */}
+                        <SearchArea handleSearch={this.handleSearch}/>
                     </div>
                     <NavLink to='/profile' ><div className={classes.Profile}><img className={classes.User} src={profileLogo} alt="profile" /></div></NavLink>
                     <NavLink to='/' ><div className={classes.LogoutButton} onClick={this.logout}><img className={classes.Logout} src={logout} alt="logout" /></div></NavLink>

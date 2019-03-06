@@ -10,7 +10,7 @@ import ProfileComponent from './routes/Profile/Profile';
 class App extends Component {
 
   render() {
-    const isLogged = sessionStorage.getItem('user') !== null;
+    const isLogged =false; //this.state.user;
 
     const profileRoute = !isLogged ?
       <Route path='/profile' render={() => (<Redirect to='/' />)} />
@@ -19,11 +19,11 @@ class App extends Component {
 
     return (
       <div>
-       
+     
         <BrowserRouter>
           <div>
-          {isLogged ? <HeaderComponent /> : <LoginComponent onLogin={this.login} />}
-            <Route exact path={`/`} component={withRouter(HomeComponent)} />
+          {isLogged ? <HomeComponent/> : <LoginComponent onLogin={this.login} />}
+            {/* <Route exact path={`/`} component={withRouter(HomeComponent)} /> */}
             <Route path={`/book/:id`} component={withRouter(BookDetailsComponent)} />
             {profileRoute}
           </div>
