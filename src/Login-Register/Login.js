@@ -69,10 +69,7 @@ class HeaderComponent extends React.Component {
                     </div>
                 </div>
                 <Authenticate />
-                <BookList/>
-           
-            <Footer/>
-           
+            
             </React.Fragment>
             </div>
         );

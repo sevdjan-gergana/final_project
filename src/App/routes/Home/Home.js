@@ -70,12 +70,12 @@ class HomeComponent extends React.Component {
             
 <React.Fragment>
             
-            <HeaderComponent/>
-            <BookList/>
+            
             <div>HOME
                 {/* <BookListComponent book={this.state.books} /> */}
               
             </div>
+            <BookList/>
             <Footer />
 
             </React.Fragment>
