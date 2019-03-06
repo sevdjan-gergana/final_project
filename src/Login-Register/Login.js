@@ -66,11 +66,7 @@ class HeaderComponent extends React.Component {
                         </form>
                     </div>
                 </div>
-                <Authenticate />
-                <BookList/>
-           
-            <Footer/>
-           
+                <Authenticate />          
             </React.Fragment>
             </div>
         );
