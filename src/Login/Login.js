@@ -4,13 +4,18 @@ import classes from './Header.module.scss';
 import Button from '../UI/Button/Button.js';
 import background from '../assets/images/background-book.jpg';
 import backgroundWords from '../assets/images/title.png';
-import Footer from '../Footer/Footer'
+import Footer from '../Footer/Footer';
+import Input from '../UI/Input/Input';
+import Home from '../HomePage/Home';
+
+
 
 
 
 class HeaderComponent extends React.Component {
 
     render() {
+        const options=[{title:'book1'},{title:'book2'},{title:'book3'}];
         const myStyle={backgroundColor: 'rgb(255, 213, 109)',width:'90px',fontSize:'1em',border:'none', height:'40px', color: '#382110'};
         return (
             <header>
@@ -42,6 +47,11 @@ class HeaderComponent extends React.Component {
                 </div>
                 <img className={classes.background} src={background}  height='500px' alt="logo" />
                 </div>
+                
+                    <form>
+                       
+                        <Home/>
+              </form>
                 <Footer/>
                 </header>
             
