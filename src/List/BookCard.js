@@ -1,5 +1,6 @@
 import React from 'react';
 import BookList from '../BookList/BookList';
+import classes from '../List/BookCard.module.scss';
 
 
 
