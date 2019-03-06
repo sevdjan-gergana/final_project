@@ -23,7 +23,7 @@ class App extends Component {
         <BrowserRouter>
           <div>
           {isLogged ? <HeaderComponent/> : <LoginComponent onLogin={this.login} />}
-            {/* <Route exact path={`/`} component={withRouter(HomeComponent)} /> */}
+            <Route exact path={`/`} component={withRouter(HomeComponent)} />
             <Route path={`/book/:id`} component={withRouter(BookDetailsComponent)} />
             {profileRoute}
           </div>

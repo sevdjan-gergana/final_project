@@ -1,7 +1,7 @@
 import React from 'react';
 // import { Redirect } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
-import classes from './Login.module.scss';
+import classes from '../Login-Register/Login.module.scss';
 import Authenticate from './authenticate';
 import Button from '../UI/Button/Button.js';
 import Input from '../UI/Input/Input.js';
@@ -54,7 +54,9 @@ class HeaderComponent extends React.Component {
             // this.props.history.push('/');
         }
         return (
+           
             <React.Fragment>
+                <div className={classes.Container}>
                 <div className={classes.Header}>
                     <img className={classes.Logo} src={logo} alt="logo" />
 
@@ -67,9 +69,9 @@ class HeaderComponent extends React.Component {
                     </div>
                 </div>
                 <Authenticate />
-            
+                </div>
             </React.Fragment>
-            </div>
+            
         );
     }
 }
