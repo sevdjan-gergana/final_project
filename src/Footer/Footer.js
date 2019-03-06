@@ -9,15 +9,17 @@ class FooterComponent extends React.Component {
                 <hr />
                 <div className={classes.Buttons}>
                     <Button type="button" title="About us"></Button>
-                    <Button type="button"  title="Careers"></Button>
-                    <Button type="button"  title="Terms"></Button>
-                    <Button type="button"  title="Privacy"></Button>
-                    <Button type="button"  title="Authors"></Button>
-                    <Button type="button"  title="Advertise"></Button>
-                    <Button type="button"  title="Authors & ads blog"></Button>
-                    <Button type="button"  title="API"></Button>
+                    <Button type="button" title="Careers"></Button>
+                    <Button type="button" title="Terms"></Button>
+                    <Button type="button" title="Privacy"></Button>
+                    <Button type="button" title="Authors"></Button>
+                    <Button type="button" title="Advertise"></Button>
+                    <Button type="button" title="Ads blog"></Button>
+                    <Button type="button" title="API"></Button>
                 </div>
-                <p>© 2019 Gergana and Sevdjan</p>
+                <div className={classes.Rights}>
+                    <p>© 2019 Gergana and Sevdjan</p>
+                </div>
             </footer>
         )
     }

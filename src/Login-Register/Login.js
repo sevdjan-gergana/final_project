@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
 import classes from './Login.module.scss';
 import Authenticate from './authenticate';
@@ -49,7 +49,8 @@ class HeaderComponent extends React.Component {
 
     render() {
         if (this.state.toNav) {
-            return <Redirect to='/profile' />
+            window.location.reload();
+            // return <Redirect to='/profile' />
             // this.props.history.push('/');
         }
         return (

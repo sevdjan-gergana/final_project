@@ -5,6 +5,7 @@
     margin-top:10%;
     left:17%;
     align-items: center;
+    width: 25vw;
     
     input{
         height: 40px;
@@ -14,17 +15,6 @@
     .regP{
         font-size: 1.3em;
         align-content: center;
-    }
-
-    .ButtonY{
-        background-color: rgb(255, 213, 109); 
-        width: 90px; 
-        font-size: 1em; 
-        border: none; 
-        height: 40px; 
-        color: #382110;    
-    }
-    .ButtonY:hover{
-        background-color: rgb(255, 228, 160);
+        color: #5e1b17;
     }
 }
