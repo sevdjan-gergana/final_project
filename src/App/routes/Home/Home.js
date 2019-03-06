@@ -61,15 +61,7 @@ class HomeComponent extends React.Component {
     render() {
 
         return (
-            // {books.map(book=>(
-            //     <li key={book.name}>{book.name} </li>
-            // ))}
-
             <React.Fragment>
-                <div>HOME
-                {/* <BookListComponent book={this.state.books} /> */}
-
-                </div>
                 <BookList />
                 <Footer />
             </React.Fragment>

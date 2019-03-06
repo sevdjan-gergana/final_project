@@ -1,11 +1,10 @@
 .Footer{
-    // position: relative;
     background-color: rgb(243, 234, 217);
     color: rgb(111, 94, 80);
     font-size: 0.7em;
     margin: 0px auto;
     position:relative;
-    bottom:0;
+    top: 75vh;
 
     .Buttons{
         display: flex;

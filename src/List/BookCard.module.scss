@@ -29,17 +29,18 @@ h3{
 .container{
     width:74%;
     margin: auto;
-    justify-content: space-between;
-    display: flex;
-}
-.book{
-    display:inline-block;
-    margin:10px;
-    width:17%;
-    height: 43%;
-    overflow: hidden;
-    background-color:white;
-    border-radius: 8px;
+    // display: flex;
+    // justify-content: space-between;
+    background-color: #f3ead9;
+    .book{
+        display:inline-block;
+        margin:10px;
+        width:17%;
+        height: 43%;
+        overflow: hidden;
+        background-color:white;
+        border-radius: 8px;
+    }
 }
 
 

@@ -1,13 +1,15 @@
 import React from 'react';
-import classes from '../SearchArea/SearchArea.modules.scss'
+import classes from '../SearchArea/SearchArea.modules.scss';
+import Input from '../Input/Input.js';
+import Button from '../Button/Button.js'; 
 
 
 const SearchArea = (props) => {
     return (
         <div className='search-area'>
             <form onSubmit={props.searchBook} action=''>
-                <input onChange={props.handleSearch} type='text' placeholder="bla"></input>
-                <button type='submit'>Search</button>
+                <Input onChange={props.handleSearch} type='text' placeholder="Serch book"></Input>
+                <Button type='submit' title="Search"></Button>
             </form>
         </div>
     )
