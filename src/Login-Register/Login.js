@@ -55,7 +55,6 @@ class HeaderComponent extends React.Component {
         }
         return (
             <React.Fragment>
-                
                 <div className={classes.Header}>
                     <img className={classes.Logo} src={logo} alt="logo" />
 
