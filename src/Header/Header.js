@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Redirect } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
 import profileLogo from '../assets/images/user.png';
 import logout from '../assets/images/logout.png';
@@ -8,9 +8,13 @@ import Input from '../UI/Input/Input.js';
 import classes from './Header.module.scss';
 
 
-class HeaderComponent extends React.Component {
-    state = {
-        toHome: false,
+class HeaderComponent extends React.Component {    
+    constructor(props) {
+        super(props);
+        this.state = {
+            toHome: false,
+        };
+        this.logout= this.logout.bind(this);
     }
 
     logout() {
@@ -19,8 +23,9 @@ class HeaderComponent extends React.Component {
     }
 
     render() {
-        if (this.state.toHome === true) {
-            return <Redirect to='/profile' />
+        if (this.state.toHome) {
+            window.location.reload();
+            // return <Redirect to='/profile' />
         }
 
         return (
