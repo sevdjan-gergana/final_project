@@ -3,7 +3,6 @@ import BookCard from '../List/BookCard';
 import classes from '../List/BookCard.module.scss';
 
 
-
 const List = (props) => {
 
     return (

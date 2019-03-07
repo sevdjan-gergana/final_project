@@ -36,7 +36,7 @@ class BookList extends React.Component {
                 <SearchArea searchBook={this.searchBook} handleSearch={this.handleSearch} />
                 {/* <List books={"cat"} /> */}
                 <List books={this.state.books} />
-
+                
                 {/* <BookListComponent bookList={this.state.books} /> */}
             </div>
 
