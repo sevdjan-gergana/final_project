@@ -61,13 +61,17 @@ class HomeComponent extends React.Component {
     render() {
 
         return (
+            
             <React.Fragment>
             
-
-                <BookList />
+            
+                            <BookList />
                
                 <Footer />
+              
+
             </React.Fragment>
+            
         );
     }
 }

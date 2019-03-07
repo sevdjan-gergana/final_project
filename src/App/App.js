@@ -6,6 +6,7 @@ import LoginComponent from '../Login-Register/Login';
 import HomeComponent from './routes/Home/Home';
 import BookDetailsComponent from './routes/Book/Book';
 import ProfileComponent from './routes/Profile/Profile';
+import classes from './routes/Home/Home.module.scss';
 
 class App extends Component {
 
@@ -21,7 +22,7 @@ class App extends Component {
       <div>
      
         <BrowserRouter>
-          <div>
+        <div className={classes.wrapper}>
           {isLogged ? <HeaderComponent/> : <LoginComponent onLogin={this.login} />}
             <Route exact path={`/`} component={withRouter(HomeComponent)} />
             <Route path={`/book/:id`} component={withRouter(BookDetailsComponent)} />
