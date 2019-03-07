@@ -1,4 +1,23 @@
-.wrapper{
-    background-color: rgb(243, 234, 217);
-    
+.Wrapper{
+    // border: 1px solid black;
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    .List{
+        background-color: rgb(243, 234, 217);
+        box-sizing: border-box;
+        padding: 10px 20px;
+        width: 80%;
+        border-radius: 10px;
+        border: 1px solid lightgray;
+    }
+    .Aside{
+        width: 18%;
+        // border: 1px solid pink;
+        padding: 15px;
+        border: 1px solid lightgray;
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
 }
