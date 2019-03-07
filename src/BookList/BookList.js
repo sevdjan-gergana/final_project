@@ -11,9 +11,21 @@ class BookList extends React.Component {
         super(props);
         this.state = {
             books: [],
-            searchField: ''
+            searchField: 'dogs'
         }
     }
+
+    componentDidMount(){
+        request
+        .get('https://www.googleapis.com/books/v1/volumes')
+        .query({ q:'cat'})
+        .then((data) => {
+            console.log(data);
+            this.setState({ books: [...data.body.items] })
+        })
+    }
+
+
 
 
     searchBook = (e) => {
@@ -36,8 +48,10 @@ class BookList extends React.Component {
     render() {
         return (
             <div>
-                <SearchArea searchBook={this.searchBook} handleSearch={this.handleSearch} />            
+                <SearchArea searchBook={this.searchBook} handleSearch={this.handleSearch} /> 
+                <div className={classes.bigWrapper}>  
                 <List books={this.state.books} />
+                </div>        
                 
                 {/* <BookListComponent bookList={this.state.books} /> */}
             </div>

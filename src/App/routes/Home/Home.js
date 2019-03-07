@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from '../../../Footer/Footer';
 import BookList from '../../../BookList/BookList';
-
+import classes from '../Home/Home.module.scss';
 class HomeComponent extends React.Component {
 
     // state = {
@@ -62,7 +62,10 @@ class HomeComponent extends React.Component {
 
         return (
             <React.Fragment>
+            
+
                 <BookList />
+               
                 <Footer />
             </React.Fragment>
         );

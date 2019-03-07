@@ -8,15 +8,14 @@ const List = (props) => {
     return (
         <div className={classes.container}>
             {props.books.map((book, i) => {
-                return <div className={classes.book}>
-                    <BookCard
+                return  <BookCard
                         key={i}
                         image={book.volumeInfo.imageLinks.thumbnail}
                         title={book.volumeInfo.title}
                         author={book.volumeInfo.authors}
                         published={book.volumeInfo.publishedDate}
                     />
-                </div>
+                
             })}
         </div>
     )

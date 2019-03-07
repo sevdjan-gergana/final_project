@@ -1,58 +1,38 @@
+.bigWrapper { 
+    margin: 0 auto;
+    width:80%;
+    display: flex;
+   
+    background-color: rgb(243, 234, 217);
+}
+
 .book{
-    display:inline-block;
-    margin:10px;
-    width:17%;
-    overflow: none;
-    background-color:white;
-    border-radius: 8px;
-    border:1px solid black;
+
+display:inline-block;
+width:16%;
+height:40%;
+margin:2%;
+overflow:hidden;
+border-radius: 10px;
+background-color: white;
 }
 
 .imgBox{
-    margin-top:5px;
-    width:90%;
-    height: 70%;
-    overflow: hidden;
-    margin: 10px auto;
-    .img{
-        margin: 0 auto;
-        height:100%;
-        width:100%;
-    }
-}
-
-h3{
+   
+    width:80%;
+    height:70%;
+    overflow:hidden;
     margin: 0 auto;
 }
 
-.titleBox{
+.img{
+
+    margin: 8px 0 auto;
     width:100%;
-    height: 13%;
-    overflow: hidden;
-    margin:0 5px ;
-    .title{
-        font-size:1em;
-        margin: 0 auto;
-    }
+    height: 100%;
+    
 }
 
-.container{
-    width:74%;
-    margin: auto;
-    // display: flex;
-    // justify-content: space-between;
-    background-color: #f3ead9;
-    .book{
-        display:inline-block;
-        margin:10px;
-        width:17%;
-        height: 43%;
-        overflow: hidden;
-        background-color:white;
-        border-radius: 8px;
-    }
+h2{
+    font-size:0.8em;
 }
-
-
-
-
