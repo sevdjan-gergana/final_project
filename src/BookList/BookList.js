@@ -1,9 +1,7 @@
 import React from 'react';
-// import classes from './BookList.module.scss';
 import SearchArea from '../UI/SearchArea/SearchArea';
 import request from 'superagent';
 import List from '../List/List';
-import classes from '../List/BookCard.module.scss'
 
 
 class BookList extends React.Component {
@@ -18,7 +16,6 @@ class BookList extends React.Component {
 
     searchBook = (e) => {
         e.preventDefault();
-        let count=0;
         request
             .get('https://www.googleapis.com/books/v1/volumes')
             .query({ q: this.state.searchField })
@@ -37,6 +34,7 @@ class BookList extends React.Component {
         return (
             <div>
                 <SearchArea searchBook={this.searchBook} handleSearch={this.handleSearch} />
+                {/* <List books={"cat"} /> */}
                 <List books={this.state.books} />
 
                 {/* <BookListComponent bookList={this.state.books} /> */}

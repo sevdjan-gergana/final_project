@@ -13,6 +13,7 @@ class RegisterComponent extends React.Component {
             userError: false,
             passError: false,
             emailError: false,
+            validationError: false,
         };
 
         this.handleUserInput = this.handleUserInput.bind(this);
@@ -25,46 +26,64 @@ class RegisterComponent extends React.Component {
         let validationError = '';
         switch (name) {
             case 'username': {
-                // validationError = validateUserName(value);
+                validationError = validateUserName(value);
                 this.setState({ [name]: value, userError: validationError });
                 break;
             }
             case 'password': {
-                // validationError = validatePassword(value);
+                validationError = validatePassword(value);
                 this.setState({ [name]: value, passError: validationError });
                 break;
             }
             case 'email': {
-                // validationError = validateEmail(value);
+                validationError = validateEmail(value);
                 this.setState({ [name]: value, emailError: validationError });
                 break;
             }
             default:
                 validationError = '';
         }
+        this.setState({validationError});
     }
 
     register(e) {
         e.preventDefault();
-        const { username, password, email } = this.state;
-        let userinfo = JSON.stringify({ username, password, email, 
-                                        shelves: { "read": [1,2], "reading": [3], "will": [4,5] } });
-        window.localStorage.setItem(username, userinfo);
+        if(!this.state.validationError){
+            const { username, password, email } = this.state;
+            let userinfo = JSON.stringify({ username, password, email, 
+                                            shelves: { "read": [], "reading": [], "will": [] } });
+            window.localStorage.setItem(username, userinfo);
+        }else{
 
+        }
     }
 
     render() {
+        function errStyle(hasError){
+            if(hasError){
+                return {display:'inline-block', color:'red', margin:'0px 10px', fontSize:'0.8em'}
+            }else{
+                return {visibility:'hidden'}
+            }
+        }
         return (
             <div className={classes.Register}>
                 <p className={classes.regP}>
                     New here? Create a free account!
                 </p>
                 <form onSubmit={this.register}>
-                    <Input type="text" placeholder="Name" name="username" onChange={this.handleUserInput} />
-                    <Input type="email" placeholder="Email address" name="email" onChange={this.handleUserInput} />
-                    <Input type="password" placeholder="Password" name="password" onChange={this.handleUserInput} />
+                    <Input type="text" placeholder="Name" name="username" 
+                        onChange={this.handleUserInput} 
+                        style={fieldColor(this.state.userError)}/>
+                    <Input type="email" placeholder="Email address" name="email" 
+                        onChange={this.handleUserInput} 
+                        style={fieldColor(this.state.emailError)}/>
+                    <Input type="password" placeholder="Password" name="password" 
+                        onChange={this.handleUserInput} 
+                        style={fieldColor(this.state.passError)}/>
 
-                    <Button className={classes.ButtonY} title="Sign up" width='100px'></Button>
+                    <Button type="submit" className={classes.ButtonY} title="Sign up" width='100px'></Button>
+                    <p style={errStyle(this.state.validationError)}>Pleace enter valid information!</p>
                 </form>
             </div>
         );
@@ -73,20 +92,20 @@ class RegisterComponent extends React.Component {
 
 export default RegisterComponent;
 
-// function validateUserName(name) {
-//     return name && !/^[a-zA-Z0-9](_(?!(\.|_))|\.(?!(_|\.))|[a-zA-Z0-9]){6,18}[a-zA-Z0-9]$/i.test(name);
-// }
+function validateUserName(name) {
+    return name && !/^[a-zA-Z0-9](_(?!(\.|_))|\.(?!(_|\.))|[a-zA-Z0-9]){4,18}[a-zA-Z0-9]$/i.test(name);
+}
 
-// function validatePassword(pass) {
-//     return pass && !/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/i.test(pass);
-// }
+function validatePassword(pass) {
+    return pass && !/^(?=.*\d)(?=.*[a-z])[a-z0-9]{7,}$/.test(pass);
+}
 
-// function validateEmail(email) {
-//     return email && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
-// }
+function validateEmail(email) {
+    return email && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
+}
 
-// function fieldColor(hasError){
-//     if(hasError){
-//         return {borderColor:'red'}
-//     }
-// }
+function fieldColor(hasError){
+    if(hasError){
+        return {borderColor:'red'}
+    }
+}

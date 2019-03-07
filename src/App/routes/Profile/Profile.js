@@ -21,8 +21,8 @@ class ProfileComponent extends React.Component {
         const user = JSON.parse(window.sessionStorage.getItem("user"));
         const { username, shelves } = user;
         this.setState({ username, shelves });
-        console.log(user);
-        console.log(shelves);
+        // console.log(user);
+        // console.log(shelves);
     }
 
     render() {
@@ -35,16 +35,14 @@ class ProfileComponent extends React.Component {
                         <hr />
                         <p>{this.state.username}'s bookshelves</p>
                         <ul>
-                            {/* <li>read‎: ({this.state.shelves.read.length})</li>
-                            <li>currently-reading‎: ({this.state.shelves})</li>
-                            <li>to-read‎: ({this.state.shelves})</li>  */}
+                            <li>read‎: ({this.state.shelves.read ?  this.state.shelves.read.length : ""})</li>
+                            <li>currently-reading‎: ({this.state.shelves.reading ?  this.state.shelves.reading.length : ""})</li>
+                            <li>to-read‎: ({this.state.shelves.will ?  this.state.shelves.will.length : ""})</li> 
                         </ul>
                     </div>
                 </div>
                 <Footer />
             </React.Fragment>
-            // <button>Add me</button>
-            // <BookListComponent type='will' books={this.state.myBooks} />
         );
     }
 }
