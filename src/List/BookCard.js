@@ -17,6 +17,7 @@ const BookCard = (props) => {
               
                 <h3>{props.authors}</h3>
                 <p>{props.published}</p>
+                <div className={classes.containerS}></div>
 
             </div>
         </React.Fragment>
