@@ -2,6 +2,7 @@ import React from 'react';
 import SearchArea from '../UI/SearchArea/SearchArea';
 import request from 'superagent';
 import List from '../List/List';
+import classes from '../List/BookCard.module.scss';
 
 
 class BookList extends React.Component {
