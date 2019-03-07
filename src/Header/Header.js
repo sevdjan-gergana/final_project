@@ -4,7 +4,6 @@ import logo from '../assets/images/logo.png';
 import profileLogo from '../assets/images/user.png';
 import logout from '../assets/images/logout.png';
 import Button from '../UI/Button/Button.js';
-import SearchArea from '../UI/SearchArea/SearchArea';
 import classes from './Header.module.scss';
 
 

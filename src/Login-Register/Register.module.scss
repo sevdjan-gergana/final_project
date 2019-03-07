@@ -7,14 +7,22 @@
     align-items: center;
     width: 25vw;
     
-    input{
-        height: 40px;
-        width: 100%;     
-        outline-color: rgb(177, 177, 150);   
-    }
     .regP{
         font-size: 1.3em;
         align-content: center;
         color: #5e1b17;
+    }
+    
+    input{
+        height: 40px;
+        width: 100%;     
+        margin: 5px;
+        outline-color: rgb(177, 177, 150);   
+    }
+    button{
+        margin: 5px;
+    }
+    .ErrorMsg{
+        display: none;
     }
 }
