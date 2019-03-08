@@ -47,9 +47,13 @@ class BookDetailsComponent extends React.Component {
                  <p>{this.state.book.volumeInfo.description}</p>
                  </div>
                  
-                 
+                 <select>
+                     <option>Read</option>
+                     <option>Reading</option>
+                     <option selected>Want to read</option>
+                 </select>
              </div>
-              
+             
                 <Footer />
             </React.Fragment>
         );
