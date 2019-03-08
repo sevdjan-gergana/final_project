@@ -26,7 +26,7 @@ class HeaderComponent extends React.Component {
     handleUserInput(e) {
         const name = e.target.name;
         const value = e.target.value;
-        
+
         this.setState({ [name]: value });
     }
 
@@ -39,11 +39,11 @@ class HeaderComponent extends React.Component {
                 window.sessionStorage.setItem("user", window.localStorage.getItem(username));
                 this.setState({ toNav: true });
             } else {
-                this.state.validationError=true;
+                this.state.validationError = true;
                 console.log("Wrong username or password!");
             }
         } else {
-            this.state.validationError=true;
+            this.state.validationError = true;
             console.log("No such registered user");
         }
     }
@@ -52,13 +52,13 @@ class HeaderComponent extends React.Component {
         if (this.state.toNav) {
             window.location.reload();
         }
+
         return (
 
             <React.Fragment>
                 <div className={classes.Container}>
                     <div className={classes.Header}>
                         <img className={classes.Logo} src={logo} alt="logo" />
-
                         <div className={classes.Login}>
                             <form onSubmit={this.login}>
                                 <Input type="text" placeholder="Username" name="username" onChange={this.handleUserInput} />

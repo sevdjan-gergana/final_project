@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom'
 import Button from '../UI/Button/Button.js';
 import Input from '../UI/Input/Input.js';
 import classes from './Register.module.scss';
@@ -43,27 +44,30 @@ class RegisterComponent extends React.Component {
             default:
                 validationError = '';
         }
-        this.setState({validationError});
+        this.setState({ validationError });
     }
 
     register(e) {
         e.preventDefault();
-        if(!this.state.validationError){
+        if (!this.state.validationError) {
             const { username, password, email } = this.state;
-            let userinfo = JSON.stringify({ username, password, email, 
-                                            shelves: { "read": [], "reading": [], "will": [] } });
+            let userinfo = JSON.stringify({
+                username, password, email,
+                shelves: { "read": [], "reading": [], "will": [] }
+            });
             window.localStorage.setItem(username, userinfo);
-        }else{
+            window.sessionStorage.setItem("user", window.localStorage.getItem(username));
 
+            window.location.reload(); //after register redirects to home page with nav
         }
     }
 
     render() {
-        function errStyle(hasError){
-            if(hasError){
-                return {display:'inline-block', color:'red', margin:'0px 10px', fontSize:'0.8em'}
-            }else{
-                return {visibility:'hidden'}
+        function errStyle(hasError) {
+            if (hasError) {
+                return { display: 'inline-block', color: 'red', fontSize: '0.4em' }
+            } else {
+                return { visibility: 'hidden' }
             }
         }
         return (
@@ -72,15 +76,15 @@ class RegisterComponent extends React.Component {
                     New here? Create a free account!
                 </p>
                 <form onSubmit={this.register}>
-                    <Input type="text" placeholder="Name" name="username" 
-                        onChange={this.handleUserInput} 
-                        style={fieldColor(this.state.userError)}/>
-                    <Input type="email" placeholder="Email address" name="email" 
-                        onChange={this.handleUserInput} 
-                        style={fieldColor(this.state.emailError)}/>
-                    <Input type="password" placeholder="Password" name="password" 
-                        onChange={this.handleUserInput} 
-                        style={fieldColor(this.state.passError)}/>
+                    <Input type="text" placeholder="Name" name="username"
+                        onChange={this.handleUserInput}
+                        style={fieldColor(this.state.userError)} />
+                    <Input type="email" placeholder="Email address" name="email"
+                        onChange={this.handleUserInput}
+                        style={fieldColor(this.state.emailError)} />
+                    <Input type="password" placeholder="Password" name="password"
+                        onChange={this.handleUserInput}
+                        style={fieldColor(this.state.passError)} />
 
                     <Button type="submit" className={classes.ButtonY} title="Sign up" width='100px'></Button>
                     <p style={errStyle(this.state.validationError)}>Pleace enter valid information!</p>
@@ -93,19 +97,19 @@ class RegisterComponent extends React.Component {
 export default RegisterComponent;
 
 function validateUserName(name) {
-    return name && !/^[a-zA-Z0-9](_(?!(\.|_))|\.(?!(_|\.))|[a-zA-Z0-9]){4,18}[a-zA-Z0-9]$/i.test(name);
+    return name && !/^[a-zA-Z0-9](_(?!(\.|_))|\.(?!(_|\.))|[a-zA-Z0-9]){4,12}[a-zA-Z0-9]$/i.test(name);
 }
 
 function validatePassword(pass) {
-    return pass && !/^(?=.*\d)(?=.*[a-z])[a-z0-9]{7,}$/.test(pass);
+    return pass && !/^(?=.*\d)(?=.*[a-z])[a-z0-9]{5,15}$/.test(pass);
 }
 
 function validateEmail(email) {
     return email && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
 }
 
-function fieldColor(hasError){
-    if(hasError){
-        return {borderColor:'red'}
+function fieldColor(hasError) {
+    if (hasError) {
+        return { borderColor: 'red' }
     }
 }

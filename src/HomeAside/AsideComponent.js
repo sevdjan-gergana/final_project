@@ -1,6 +1,4 @@
 import React from 'react';
-import SearchArea from '../UI/SearchArea/SearchArea';
-import List from '../List/List';
 import classes from '../List/BookCard.module.scss';
 
 
