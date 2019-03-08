@@ -17,7 +17,7 @@ const input = props => {
 
         case "select":
             return (<select
-                className={classes.Input}
+                className={classes.InputSelect}
                 {...props}
                 style={props.style}>
                 {props.options.map(option => (

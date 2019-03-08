@@ -3,6 +3,7 @@ import Footer from '../../../Footer/Footer';
 import BookList from '../../../BookList/BookList';
 import Aside from '../../../HomeAside/AsideComponent.js';
 import Loader from '../../../Loader/LoaderComponent.js';
+import GenresModal from '../../../GenresModal/GenresModalComponent';
 import classes from './Home.module.scss';
 
 class HomeComponent extends React.Component {
@@ -10,8 +11,13 @@ class HomeComponent extends React.Component {
         super(props);
         this.state = {
             loading: true,
+
+            showModal: true,
+
         }
+        this.handleModalClose = this.handleModalClose.bind(this);
     }
+
 
     // state = {
     //     books: []
@@ -67,6 +73,10 @@ class HomeComponent extends React.Component {
     //         }).catch(e => console.log(e))
     // }
 
+    handleModalClose() {
+        this.setState({ showModal: false })
+    }
+
     componentDidMount() {
         this.timerHandle = setTimeout(() => this.setState({ loading: false }), 1500);
     }
@@ -75,8 +85,9 @@ class HomeComponent extends React.Component {
 
     render() {
         return (
-            this.state.loading ? <Loader/>
+            this.state.loading ? <Loader />
                 : <React.Fragment>
+                    {this.state.showModal ? <GenresModal handleModalClose={this.handleModalClose} /> : ''}
                     <div className={classes.Wrapper}>
                         <div className={classes.List}><BookList /></div>
                         <div className={classes.Aside}><Aside /></div>

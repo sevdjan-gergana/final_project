@@ -65,7 +65,7 @@ class RegisterComponent extends React.Component {
     render() {
         function errStyle(hasError) {
             if (hasError) {
-                return { display: 'inline-block', color: 'red', fontSize: '0.4em' }
+                return { display: 'inline-block',margin: '0px 10px', color: 'red', fontSize: '0.8em' }
             } else {
                 return { visibility: 'hidden' }
             }
