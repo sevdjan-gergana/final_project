@@ -7,6 +7,7 @@ import HomeComponent from './routes/Home/Home';
 import BookDetailsComponent from './routes/Book/Book';
 import ProfileComponent from './routes/Profile/Profile';
 
+
 class App extends Component {
 
   render() {

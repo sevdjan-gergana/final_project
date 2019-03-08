@@ -10,7 +10,8 @@ class BookList extends React.Component {
         super(props);
         this.state = {
             books: [],
-            searchField: 'dogs'
+            searchField: 'dogs',
+            id:''
         }
         // seearchService.addObserver(this);
     }
