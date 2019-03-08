@@ -8,6 +8,7 @@ import BookDetailsComponent from './routes/Book/Book';
 import ProfileComponent from './routes/Profile/Profile';
 import classes from './routes/Home/Home.module.scss';
 
+
 class App extends Component {
 
   render() {
