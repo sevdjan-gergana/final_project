@@ -1,0 +1,17 @@
+.Wrapper{
+    margin: 20px 0px;
+    box-sizing: border-box;
+    width: 99vw;
+    height: 100vh;
+    background-color: #f5f7f6;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    .Loader{
+        img{
+            width: 500px;
+        }
+        z-index: 10;
+    }
+}

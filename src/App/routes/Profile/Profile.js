@@ -37,7 +37,7 @@ class ProfileComponent extends React.Component {
                         <ul>
                             <li>read‎: ({this.state.shelves.read ?  this.state.shelves.read.length : ""})</li>
                             <li>currently-reading‎: ({this.state.shelves.reading ?  this.state.shelves.reading.length : ""})</li>
-                            <li>to-read‎: ({this.state.shelves.will ?  this.state.shelves.will.length : ""})</li> 
+                            <li>want to read: ({this.state.shelves.will ?  this.state.shelves.will.length : ""})</li> 
                         </ul>
                     </div>
                 </div>
