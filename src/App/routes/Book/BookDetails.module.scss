@@ -1,0 +1,36 @@
+.Wrapper{
+    width: 90%;
+    margin: 0 auto;
+    background-color: rgb(243, 234, 217);
+    display: flex;
+   
+}
+
+.imgWrapper{
+    width:30%;
+  padding:30%;
+margin:10%;
+}
+
+.infoBox{
+display: inline-block;
+width:30%;
+margin:2%  4%;
+
+}
+
+.img{
+    width:90%;
+    margin:20%;
+
+}
+.button{
+    
+    height:8%;
+    width:60%;
+    display:inline-block;
+    clear:both;
+    background-color:rgb(64, 157, 105);
+    color:white;
+    border-radius: 5px;
+}

@@ -28,14 +28,14 @@ const BookCard = (props) => {
         <React.Fragment>
             <div className={classes.book}>
             <div className={classes.imgBox}>
-            <NavLink to={`book/${props.id}`}><h3>{props.id}</h3></NavLink>
-        <img className={classes.img} src={props.image} alt='' />
+          
+            <NavLink to={`book/${props.id}`}><img className={classes.img} src={props.image} alt='' /></NavLink>
                 </div>
                 <>
-                <h2>{props.title}</h2>
+                <NavLink to={`book/${props.id}`}><h2>{props.title}</h2></NavLink>
               
                
-                <p>{props.published}</p>
+                <NavLink to={`book/${props.id}`}><p>{props.published}</p></NavLink>
                
             </>
             </div>

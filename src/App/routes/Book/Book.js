@@ -36,24 +36,27 @@ class BookDetailsComponent extends React.Component {
         return (
             <React.Fragment>
            
-             <div className={classes.bookWrapper}>
+             <div className={classes.Wrapper}>
+             
+             <div className={classes.imgBox}>
+             <img className={classes.img} src={this.state.book.volumeInfo.imageLinks.small} alt='' />
+             </div>
+             <div className={classes.infoBox}>
                  <h1>{this.state.book.volumeInfo.title}</h1>
-                 
-                 <h3>{this.state.book.volumeInfo.authors}</h3>
-                 {this.state.book.volumeInfo.categories}
-
-                 <div>
-                 <img  src={this.state.book.volumeInfo.imageLinks.small} alt='' />
-                 <p>{this.state.book.volumeInfo.description}</p>
-                 </div>
-                 
-                 <select>
+                 <select className={classes.button}>
                      <option>Read</option>
                      <option>Reading</option>
                      <option selected>Want to read</option>
                  </select>
+                 <h3>{this.state.book.volumeInfo.authors}</h3>
+                 {this.state.book.volumeInfo.categories}
+                 <p>{this.state.book.volumeInfo.description}</p>
+                 
+                 </div>
+                
+                 
              </div>
-             
+            
                 <Footer />
             </React.Fragment>
         );
