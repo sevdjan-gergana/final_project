@@ -30,11 +30,15 @@ const BookCard = (props) => {
                 <div className={classes.imgBox}>
                     <NavLink to={url}><h3>{props.id}</h3></NavLink>
                     <img className={classes.img} src={props.image} alt='' />
+          
                 </div>
                 <>
                     <h2>{props.title}</h2>
                     <p>{props.published}</p>
                 </>
+              
+               
+               
             </div>
         </React.Fragment>
     )
