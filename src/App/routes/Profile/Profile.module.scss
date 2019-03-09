@@ -4,13 +4,16 @@
     display: flex;
 
     .userLogo{
-        margin: 0px 30px;
-        height: 150px;
-        width: 150px;
+        height: 10em;
+        width: 10em;
         border-radius: 50%;
     }
     .UserInfo{
         color: #5e1b17;
+        margin: 0px 4% 0px 3%;
+        width: 30%;
+        padding: 0px 4%;
+        border-right: 1px solid lightgray;
         h2{
             font-size: 1.4em;
             text-transform: capitalize;
@@ -23,6 +26,36 @@
         }
         ul>li{
             list-style-type: none;
+        }
+    }
+    .UserFavGenres{
+        color: #5e1b17;
+        width: 30%;
+        h3{
+            display: inline;
+            margin: 0px;
+            padding: 0px;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            font-weight: 700;
+        }
+        .GenresList{
+            columns: 2;
+            margin-bottom: 20px;
+            .Genre{
+                margin: 0px;
+            }
+        }
+        .EditButton{
+            display: inline;
+            Button{
+                background-color: white;
+                color: #1d7470;
+                border: none;
+            }
+            Button:hover{
+                text-decoration: underline;
+            }
         }
     }
 }

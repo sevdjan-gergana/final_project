@@ -1,55 +1,66 @@
 .ModalWindow {
-    position: fixed;
-    background-color: rgba(243, 234, 217, 0.66);
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 999;
-    opacity: 1;
-    pointer-events: auto;
-    transition: all 0.3s;
-    &>div {
-      width: 600px;
-      height: 400px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 2em;
-      background: #ffffff;
-      color: #333333;
-    }
-    header {
-      font-weight: bold;
-    }
-    h1 {
-      font-size: 150%;
-      margin: 0 0 15px;
-      color: #333333;
-    }
-  }
-  
-  .ModalClose {
-    color: #aaa;
-    line-height: 50px;
-    font-size: 80%;
+  position: fixed;
+  background-color: rgba(243, 234, 217, 0.66);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.3s;
+  &>div {
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 35%;
+    height: 62%;
     position: absolute;
-    right: 0;
-    text-align: center;
-    top: 0;
-    width: 70px;
-    text-decoration: none;
-    &:hover {
-      color: #000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1.5em;
+    background: #ffffff;
+    color: #333333;
+    overflow: auto;
+  }
+  h1 {
+    font-size: 1.3em;
+    margin: 0 0 15px;
+    color: #333333;
+    padding-bottom: 5px;
+    border-bottom: 1px solid gray;
+  }
+  .CheckList{
+    column-count: 3;
+    label{
+      width: 100%;
+      margin: 3px;
+      display: inline-block;
     }
   }
-  
-  /* Demo Styles */
-  
-  
-  a {
-    color: inherit;
+  .SubmitButton{
+    // border: 1px solid black;
+    display: block;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
   }
+}
+  
+.ModalClose {
+  color: #aaa;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+  &:hover {
+    color: #000;
+    cursor: pointer;
+  }
+}
   
   

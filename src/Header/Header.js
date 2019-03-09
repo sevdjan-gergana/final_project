@@ -7,13 +7,13 @@ import Button from '../UI/Button/Button.js';
 import classes from './Header.module.scss';
 
 
-class HeaderComponent extends React.Component {    
+class HeaderComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             toHome: false,
         };
-        this.logout= this.logout.bind(this);
+        this.logout = this.logout.bind(this);
     }
 
     logout() {
@@ -32,15 +32,12 @@ class HeaderComponent extends React.Component {
                     <NavLink to='/'><div><img className={classes.Logo} src={logo} width="100px" alt="logo" /></div></NavLink>
                     <div className={classes.NavButtons}>
                         <NavLink to='/'><Button title="Home" /> </NavLink>
-                        <NavLink to='/book/:id'> <Button className={classes.Buttons} title="My Books" /></NavLink>
+                        <NavLink to='/myBooks'> <Button title="My Books" /></NavLink>
                     </div>
-                    <div className={classes.Search}>
-                   {/* <input type='text' placeholder='Enter type of book'></input>
-                        <Button title="Search" /> */}
-                        {/* <SearchArea handleSearch={this.handleSearch}/> */}
+                    <div className={classes.ProfileButtons}>
+                        <NavLink to='/profile' ><div className={classes.Profile}><img className={classes.User} src={profileLogo} alt="profile" /></div></NavLink>
+                        <div className={classes.LogoutButton} onClick={this.logout}><img className={classes.Logout} src={logout} alt="logout" /></div>
                     </div>
-                    <NavLink to='/profile' ><div className={classes.Profile}><img className={classes.User} src={profileLogo} alt="profile" /></div></NavLink>
-                    <div className={classes.LogoutButton} onClick={this.logout}><img className={classes.Logout} src={logout} alt="logout" /></div>
                 </div>
             </header >
         );

@@ -7,7 +7,6 @@
         align-items: center;
         font-size:2em;
         background-color:rgb(243, 234, 217);
-        // padding: 10px;
         border-bottom: 2px solid rgb(137, 101, 75);
     
         .Logo{
@@ -16,19 +15,23 @@
         }
         .Login{
             form{
-                p{
-                    font-size: 0.8em;
-                }
-                a{
-                    position: relative;
-                    top: -10px;
-                    right: -147px;
-                    margin: 0px;
-                    text-decoration: none;
-                    font-size: 0.4em;
-                    color: rgb(137, 101, 75);                }
-                a:hover{
-                    text-decoration: underline;
+                .Ps{
+                    height: 30px;
+                    a{
+                        p{
+                            display: inline;
+                        }
+                        display: inline;
+                        position: relative;
+                        top: -15px;
+                        left: 35px;
+                        margin: 0px;
+                        text-decoration: none;
+                        font-size: 0.4em;
+                        color: rgb(137, 101, 75);                }
+                    a:hover{
+                        text-decoration: underline;
+                    }
                 }
             }
         }
