@@ -57,7 +57,6 @@ class RegisterComponent extends React.Component {
                 genres : []
             });
             window.localStorage.setItem(username, userinfo);
-
             window.location.reload(); //after register redirects to home page with nav
         }
     }
