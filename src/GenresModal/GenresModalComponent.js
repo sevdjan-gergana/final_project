@@ -33,11 +33,17 @@ class GenresModal extends React.Component {
         e.preventDefault();
         const user = JSON.parse(window.localStorage.getItem(window.sessionStorage.getItem("user")));
         if(user){
+            
             user.genres = this.state.selectedGenres;
             window.localStorage.setItem(user.username, JSON.stringify(user));
+
         }
         
     }
+
+
+
+
 
     render() {
         return (
