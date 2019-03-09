@@ -6,9 +6,7 @@ import Authenticate from './authenticate';
 import Button from '../UI/Button/Button.js';
 import Input from '../UI/Input/Input.js';
 
-
-
-class HeaderComponent extends React.Component {
+class LoginComponent extends React.Component {
 
     constructor(props) {
         super(props);
@@ -17,10 +15,12 @@ class HeaderComponent extends React.Component {
             password: '',
             toNav: false,
             validationError: false,
+            style: {},
         };
 
         this.handleUserInput = this.handleUserInput.bind(this);
         this.login = this.login.bind(this);
+        // this.errStyle = this.errStyle.bind(this);
     }
 
     handleUserInput(e) {
@@ -36,15 +36,16 @@ class HeaderComponent extends React.Component {
         const userInfo = JSON.parse(window.localStorage.getItem(username));
         if (userInfo) {
             if (userInfo.password === password) {
-                window.sessionStorage.setItem("user", window.localStorage.getItem(username));
+                window.sessionStorage.setItem("user", username);
                 this.setState({ toNav: true });
             } else {
-                this.state.validationError = true;
-                console.log("Wrong username or password!");
+                this.setState({ validationError: true });
             }
         } else {
-            this.state.validationError = true;
-            console.log("No such registered user");
+            this.setState({ validationError: true });
+        }
+        if (this.state.validationError) {
+            console.log("Wrong username or password!"); //add styling to error
         }
     }
 
@@ -54,22 +55,23 @@ class HeaderComponent extends React.Component {
         }
 
         return (
-
             <React.Fragment>
                 <div className={classes.Container}>
                     <div className={classes.Header}>
-                        <img className={classes.Logo} src={logo} alt="logo" />
+                        <NavLink to='/'><img className={classes.Logo} src={logo} alt="logo" /> </NavLink>
                         <div className={classes.Login}>
                             <form onSubmit={this.login}>
                                 <Input type="text" placeholder="Username" name="username" onChange={this.handleUserInput} />
                                 <Input type="password" placeholder="Password" name="password" onChange={this.handleUserInput} />
                                 <Button title="Sign in"></Button>
-                                <NavLink to='/'><p>Create a New Account</p> </NavLink>
+                                <div className={classes.Ps}>
+                                    <p style={errStyle(this.state.validationError)}>Wrong username or password!</p>
+                                    <NavLink to='/'><p>Create a New Account</p> </NavLink>
+                                </div>
                             </form>
                         </div>
                     </div>
                 </div>
-
                 <Authenticate />
             </React.Fragment>
 
@@ -77,4 +79,29 @@ class HeaderComponent extends React.Component {
     }
 }
 
-export default HeaderComponent;
+export default LoginComponent;
+
+function errStyle(hasError) {
+    let style = {};
+    if (hasError) {
+        style = {
+            display: 'inline',
+            fontSize: '0.4em',
+            color: 'red',
+            margin: '0px 5px',
+            position: 'relative',
+            top: '-15px'
+        }
+    } else {
+        style = {
+            visibility: 'hidden',
+            display: 'inline',
+            fontSize: '0.4em',
+            color: 'red',
+            margin: '0px 5px',
+            position: 'relative',
+            top: '-15px'
+        }
+    }
+    return style;
+}

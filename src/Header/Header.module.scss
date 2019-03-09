@@ -8,94 +8,80 @@
         height: 100%;
         margin: 0px auto;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: center;
         font-size:2em;
         box-sizing: border-box;
         border-bottom: 2px solid #eeede8;
-    }
-
-    .Logo{
-        margin-top: 10px;
-        width: 160px;
-    }
-
-    .NavButtons{
-        height: 50px;
-    }
-
-    .NavButtons Button{
-        position: relative;
-        top: -3px;
-        height: 100%;
-        width: 110px;
-        margin: 0px;
-        border-radius: 0px;
-        background-color: #f3ead9;
-        border: none;
-        color: #382110;
-        font-size: 0.5em;
-    }
-
-    .NavButtons Button:hover{
-        color: white;
-        background-color: #382110;
-    }
-    a{
-        text-decoration: none;
-    }
-
-    .Search{
-        position: relative;
-        top: -3px;
-        
-        input{
-            margin-top:-20px;
-            width: 180px;
-            height: 33px;
-            border: 1px solid lightgray;
-            border-radius: 3px;
-            padding: 5px;
-            box-sizing: border-box;
-        }
-    }
-    .Profile{
-        padding: 0px 5px;
         box-sizing: border-box;
-        cursor: pointer;
-        .User{
+        .Logo{
             margin-top: 10px;
-            box-sizing: border-box;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            border: 1px solid lightgray;
+            width: 160px;
+        }
+        .NavButtons{
+            height: 100%;
+            width: 20%;
+            margin: 0px;
+            Button{
+                position: relative;
+                top: -5px;
+                height: 110%;
+                width: 48%;
+                min-width: 90px;
+                margin: 0px;
+                border-radius: 0px;
+                background-color: #f3ead9;
+                border: none;
+                color: #382110;
+                font-size: 0.5em;
+            }
+            Button:hover{
+                color: white;
+                background-color: #382110;
+            }
+        }
+        a{
+            text-decoration: none;
+        }
+
+        .ProfileButtons{
+            height: 100%;
+            width: 20%;
+            display: flex;
+            .Profile{
+                padding: 0px 5px;
+                box-sizing: border-box;
+                height: 105%;
+                cursor: pointer;
+                .User{
+                    margin-top: 10px;
+                    box-sizing: border-box;
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 50%;
+                    border: 1px solid lightgray;
+                }
+            }
+            .Profile:hover{
+                background-color: #382110;
+                .User{
+                    border: 1px solid #382110;
+                }
+            }
+
+            .LogoutButton{
+                padding: 5px 10px;
+                box-sizing: border-box;
+                height: 105%;
+                cursor: pointer;
+                .Logout{
+                    width: 25px;
+                }
+            }
+            .LogoutButton:hover{
+                padding: 5px 10px;
+                background-color: #382110;
+            }
         }
     }
-
-    .Profile:hover{
-        background-color: #382110;
-        .User{
-            border: 1px solid #382110;
-        }
-    }
-
-    .LogoutButton{
-        padding: 5px 10px;
-        box-sizing: border-box;
-        cursor: pointer;
-        .Logout{
-            width: 25px;
-        }
-    }
-
-    .LogoutButton:hover{
-        padding: 5px 10px;
-        background-color: #382110;
-    }
-}
-
-.Container{
-    width:100%;
-    background-color:green;
 }

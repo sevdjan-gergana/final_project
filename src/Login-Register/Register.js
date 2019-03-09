@@ -53,10 +53,10 @@ class RegisterComponent extends React.Component {
             const { username, password, email } = this.state;
             let userinfo = JSON.stringify({
                 username, password, email,
-                shelves: { "read": [], "reading": [], "will": [] }
+                shelves: { "read": [], "reading": [], "will": [] },
+                genres : []
             });
             window.localStorage.setItem(username, userinfo);
-            window.sessionStorage.setItem("user", window.localStorage.getItem(username));
 
             window.location.reload(); //after register redirects to home page with nav
         }
