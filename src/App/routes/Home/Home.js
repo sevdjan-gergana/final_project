@@ -11,11 +11,7 @@ class HomeComponent extends React.Component {
         super(props);
         this.state = {
             loading: true,
-
-            showModal: true,
-
         }
-        this.handleModalClose = this.handleModalClose.bind(this);
     }
 
 
@@ -73,21 +69,14 @@ class HomeComponent extends React.Component {
     //         }).catch(e => console.log(e))
     // }
 
-    handleModalClose() {
-        this.setState({ showModal: false })
-    }
-
     componentDidMount() {
         this.timerHandle = setTimeout(() => this.setState({ loading: false }), 1500);
     }
-
-
 
     render() {
         return (
             this.state.loading ? <Loader />
                 : <React.Fragment>
-                    {this.state.showModal ? <GenresModal handleModalClose={this.handleModalClose} /> : ''}
                     <div className={classes.Wrapper}>
                         <div className={classes.List}><BookList /></div>
                         <div className={classes.Aside}><Aside /></div>

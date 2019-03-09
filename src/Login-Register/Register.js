@@ -15,6 +15,7 @@ class RegisterComponent extends React.Component {
             passError: false,
             emailError: false,
             validationError: false,
+            isRegistered:false
         };
 
         this.handleUserInput = this.handleUserInput.bind(this);
@@ -58,6 +59,7 @@ class RegisterComponent extends React.Component {
             });
             window.localStorage.setItem(username, userinfo);
             window.location.reload(); //after register redirects to home page with nav
+            
         }
     }
 

@@ -38,7 +38,7 @@ class BookDetailsComponent extends React.Component {
         user.shelves.read = user.shelves.read.filter((book) => book !== this.state.book.id);
         user.shelves.reading = user.shelves.reading.filter((book) => book !== this.state.book.id);
         user.shelves.will = user.shelves.will.filter((book) => book !== this.state.book.id);
-        
+
         user.shelves[shelve].push(this.state.book.id);
         window.localStorage.setItem(userName, JSON.stringify(user));
 
@@ -48,25 +48,22 @@ class BookDetailsComponent extends React.Component {
         // console.log(this.state.book.volumeInfo.title);
         return (
             <React.Fragment>
-
-                <div className={classes.bookWrapper}>
-                    <h1>{this.state.book.volumeInfo.title}</h1>
-
-                    <h3>{this.state.book.volumeInfo.authors}</h3>
-                    {this.state.book.volumeInfo.categories}
-
-                    <div>
-                        <img src={this.state.book.volumeInfo.imageLinks.small} alt='' />
+                <div className={classes.Wrapper}>
+                    <div className={classes.imgBox}>
+                        <img className={classes.img} src={this.state.book.volumeInfo.imageLinks.small} alt='' />
+                        <select className={classes.button} id="mySelect" onChange={this.handleUserSelect}>
+                            <option value="read">Read</option>
+                            <option value="reading">Reading</option>
+                            <option value="will" selected="selected">Want to read</option>
+                        </select>
+                    </div>
+                    <div className={classes.infoBox}>
+                        <h1>{this.state.book.volumeInfo.title}</h1>
+                        <h3>by {this.state.book.volumeInfo.authors}</h3>
+                        {this.state.book.volumeInfo.categories}
                         <p>{this.state.book.volumeInfo.description}</p>
                     </div>
-
-                    <select id="mySelect" onChange={this.handleUserSelect}>
-                        <option value="read">Read</option>
-                        <option value="reading">Reading</option>
-                        <option value="will" selected="selected">Want to read</option>
-                    </select>
                 </div>
-
                 <Footer />
             </React.Fragment>
         );

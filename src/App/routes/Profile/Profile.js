@@ -1,5 +1,6 @@
 import React from 'react';
 import Footer from '../../../Footer/Footer';
+import GenresModal from '../../../GenresModal/GenresModalComponent';
 import classes from './Profile.module.scss';
 import userLogo from '../../../assets/images/user.png';
 import Button from '../../../UI/Button/Button.js';
@@ -15,7 +16,9 @@ class ProfileComponent extends React.Component {
                 will: [],
             },
             genres: [],
-        };
+            showModal: false,
+        }
+        this.handleModalClose = this.handleModalClose.bind(this);
     }
 
     componentDidMount() {
@@ -24,9 +27,14 @@ class ProfileComponent extends React.Component {
         this.setState({ username, shelves, genres });
     }
 
+    handleModalClose() {
+        this.setState({ showModal: false })
+    }
+
     render() {
         return (
             <React.Fragment>
+                {this.state.showModal ? <GenresModal handleModalClose={this.handleModalClose} /> : ''}
                 <div className={classes.Wrapper}>
                     <div><img className={classes.userLogo} src={userLogo} alt="userLogo"></img></div>
                     <div className={classes.UserInfo}>
@@ -42,7 +50,7 @@ class ProfileComponent extends React.Component {
                     <div className={classes.UserFavGenres}>
                         <h3>Favorite genres</h3>
                         <div className={classes.EditButton}>
-                            <Button title="(edit)" />
+                            <Button title="(edit)" onClick={() => this.setState({ showModal: true })} />
                         </div>
                         <hr />
                         <div className={classes.GenresList}>{this.state.genres.map((genre, i) => {
@@ -55,5 +63,4 @@ class ProfileComponent extends React.Component {
         );
     }
 }
-
 export default ProfileComponent;

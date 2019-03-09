@@ -5,6 +5,8 @@ import classes from '../Login-Register/Login.module.scss';
 import Authenticate from './authenticate';
 import Button from '../UI/Button/Button.js';
 import Input from '../UI/Input/Input.js';
+import GenresModal from '../GenresModal/GenresModalComponent';
+
 
 class LoginComponent extends React.Component {
 
@@ -16,10 +18,12 @@ class LoginComponent extends React.Component {
             toNav: false,
             validationError: false,
             style: {},
+            showModal: true
         };
 
         this.handleUserInput = this.handleUserInput.bind(this);
         this.login = this.login.bind(this);
+        this.handleModalClose = this.handleModalClose.bind(this);
         // this.errStyle = this.errStyle.bind(this);
     }
 
@@ -49,6 +53,15 @@ class LoginComponent extends React.Component {
         }
     }
 
+    handleModalClose() {
+        this.setState({ showModal: false })
+    }
+
+    componentDidMount() {
+        this.timerHandle = setTimeout(() => this.setState({ loading: false }), 1500);
+    }
+
+
     render() {
         if (this.state.toNav) {
             window.location.reload();
@@ -73,6 +86,7 @@ class LoginComponent extends React.Component {
                     </div>
                 </div>
                 <Authenticate />
+                {this.state.showModal ? <GenresModal handleModalClose={this.handleModalClose} /> : ''}
             </React.Fragment>
 
         );
