@@ -1,36 +1,35 @@
 .book{
-display:inline-block;
-width:17%;
-height:40%;
-margin:1%;
-overflow:hidden;
-border-radius: 10px;
-background-color: white;
-}
-
-.imgBox{
-   
-    width:80%;
-    height:70%;
+    display:inline-block;
+    width:17%;
+    height:40%;
+    margin:1%;
     overflow:hidden;
-    margin: 0 auto;
-}
+    border-radius: 10px;
+    background-color: white;
+    .imgBox{
+        width:80%;
+        height:70%;
+        margin: 0 auto;
+        .img{
+            box-sizing: border-box;
+            margin: 10px auto;
+            width: 8vw;
+            height: 20vh;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+        }
+        .img:hover {
+            box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+        }
+    }
 
-.img{
-
-    margin: 8px 0 auto;
-    width:100%;
-    height: 100%;
-}
-
-h2{
-    font-size:0.8em;
-    margin: 0 auto;
-}
-
-
-a:link {
-   
-    color:#382110;
-    text-decoration: none;
+    h2{
+        font-size:0.8em;
+        margin: 0 auto;
+    }
+    a:link {
+        color:#382110;
+        text-decoration: none;
+    }
 }

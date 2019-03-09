@@ -1,8 +1,6 @@
 import React from 'react';
-import BookList from '../BookList/BookList';
 import { NavLink } from 'react-router-dom';
 import classes from '../List/BookCard.module.scss'
-import BookDetailsComponent from '../App/routes/Book/Book';
 
 
 //  getID=(e)=>{
@@ -16,29 +14,25 @@ import BookDetailsComponent from '../App/routes/Book/Book';
 //      }
 
 const BookCard = (props) => {
+    function validateTitle(){
+        if(props.title.length > 20){
+            return (props.title.slice(0,20) + "...");
+        }else {
+            return props.title;
+        }
+    }
 
-    // function redirectToBook(){
-    //     let hash="/book/"+ props.id;
-    //     console.log(2);
-    //     return hash;
-    // }
     const url = 'book/' + props.id;
     return (
-
         <React.Fragment>
             <div className={classes.book}>
                 <div className={classes.imgBox}>
-                    <NavLink to={url}><h3>{props.id}</h3></NavLink>
-                    <img className={classes.img} src={props.image} alt='' />
-          
+                    <NavLink to={url}><img className={classes.img} src={props.image} alt='' /></NavLink>
                 </div>
                 <>
-                    <h2>{props.title}</h2>
-                    <p>{props.published}</p>
+                    <NavLink to={url}><h2>{validateTitle()}</h2></NavLink>
+                    <NavLink to={url}><p>{props.published}</p></NavLink>
                 </>
-              
-               
-               
             </div>
         </React.Fragment>
     )

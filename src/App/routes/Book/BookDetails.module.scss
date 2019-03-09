@@ -1,0 +1,35 @@
+.Wrapper{
+    width: 80%;
+    margin: 20px auto;
+    background-color: rgb(243, 234, 217);
+    border-radius: 10px;
+    display: flex;
+    .imgBox{
+        width:30%;
+        margin: 2%;
+        .img{
+            width:100%;
+        }
+        
+        .button{
+            display: block;
+            margin: 10px auto;
+            height:8%;
+            width:50%;
+            background-color:rgb(64, 157, 105);
+            color:white;
+            border-radius: 5px;
+            outline: none;
+            cursor: pointer;
+        }
+    }
+   
+    .infoBox{
+        display: inline-block;
+        width: 50%;
+        margin: 2%;
+        // overflow: auto;
+    }
+}
+
+
