@@ -28,7 +28,6 @@ class BookDetailsComponent extends React.Component {
         const res = await fetch(`https://www.googleapis.com/books/v1/volumes/${id}`);
         const book = await res.json();
         this.setState({ book });
-       
     }
 
     handleUserSelect() {
