@@ -16,7 +16,6 @@ class BookDetailsComponent extends React.Component {
                     description: '',
                     categories: '',
                     imageLinks: {
-                        small: ''
                     }
                 }
             }
