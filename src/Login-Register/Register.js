@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom'
+import GenresModal from '../GenresModal/GenresModalComponent';
 import Button from '../UI/Button/Button.js';
 import Input from '../UI/Input/Input.js';
 import classes from './Register.module.scss';
@@ -53,64 +53,67 @@ class RegisterComponent extends React.Component {
         if (!this.state.validationError) {
             const { username, password, email } = this.state;
             let userinfo = JSON.stringify({
-                username, password, email,
-                shelves: { "read": [], "reading": [], "will": [] },
-                genres : []
-            });
+                    username, password, email,
+                    shelves: { "read": [], "reading": [], "will": [] },
+                    genres: []
+                });
             window.localStorage.setItem(username, userinfo);
-            window.location.reload(); //after register redirects to home page with nav
-            
+            alert("You have successfully registered! Now you can sign in to your account.");
+            // window.location.reload();  //clear inputs inner text
         }
     }
 
     render() {
         function errStyle(hasError) {
             if (hasError) {
-                return { display: 'inline-block',margin: '0px 10px', color: 'red', fontSize: '0.8em' }
+                return { display: 'inline-block', margin: '0px 10px', color: 'red', fontSize: '0.8em' }
             } else {
                 return { visibility: 'hidden' }
             }
         }
+
         return (
-            <div className={classes.Register}>
-                <p className={classes.regP}>
-                    New here? Create a free account!
-                </p>
-                <form onSubmit={this.register}>
-                    <Input type="text" placeholder="Name" name="username"
-                        onChange={this.handleUserInput}
-                        style={fieldColor(this.state.userError)} />
-                    <Input type="email" placeholder="Email address" name="email"
-                        onChange={this.handleUserInput}
-                        style={fieldColor(this.state.emailError)} />
-                    <Input type="password" placeholder="Password" name="password"
-                        onChange={this.handleUserInput}
-                        style={fieldColor(this.state.passError)} />
+            <React.Fragment>
+                    <div className={classes.Register}>
+                        <p className={classes.regP}>
+                            New here? Create a free account!
+                        </p>
+                        <form onSubmit={this.register}>
+                            <Input type="text" placeholder="Name" name="username"
+                                onChange={this.handleUserInput}
+                                style={fieldColor(this.state.userError)} />
+                            <Input type="email" placeholder="Email address" name="email"
+                                onChange={this.handleUserInput}
+                                style={fieldColor(this.state.emailError)} />
+                            <Input type="password" placeholder="Password" name="password"
+                                onChange={this.handleUserInput}
+                                style={fieldColor(this.state.passError)} />
 
-                    <Button type="submit" className={classes.ButtonY} title="Sign up" width='100px'></Button>
-                    <p style={errStyle(this.state.validationError)}>Pleace enter valid information!</p>
-                </form>
-            </div>
-        );
+                            <Button type="submit" className={classes.ButtonY} title="Sign up" width='100px' ></Button> 
+                            <p style={errStyle(this.state.validationError)}>Pleace enter valid information!</p>
+                        </form>
+                    </div>
+            </React.Fragment>
+            );
+        }
     }
-}
-
-export default RegisterComponent;
-
+    
+    export default RegisterComponent;
+    
 function validateUserName(name) {
     return name && !/^[a-zA-Z0-9](_(?!(\.|_))|\.(?!(_|\.))|[a-zA-Z0-9]){4,12}[a-zA-Z0-9]$/i.test(name);
-}
-
+            }
+            
 function validatePassword(pass) {
     return pass && !/^(?=.*\d)(?=.*[a-z])[a-z0-9]{5,15}$/.test(pass);
-}
-
+            }
+            
 function validateEmail(email) {
     return email && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
-}
-
+            }
+            
 function fieldColor(hasError) {
     if (hasError) {
-        return { borderColor: 'red' }
-    }
+        return {borderColor: 'red' }
+            }
 }

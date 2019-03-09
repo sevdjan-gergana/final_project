@@ -1,4 +1,20 @@
 .ModalWindow {
+  .ModalClose {
+    color: #aaa;
+    line-height: 50px;
+    font-size: 80%;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 70px;
+    text-decoration: none;
+    &:hover {
+      color: #000;
+      cursor: pointer;
+    }
+  }
+    
   position: fixed;
   background-color: rgba(243, 234, 217, 0.66);
   top: 0;
@@ -44,22 +60,6 @@
     display: flex;
     justify-content: space-around;
     margin-top: 15px;
-  }
-}
-  
-.ModalClose {
-  color: #aaa;
-  line-height: 50px;
-  font-size: 80%;
-  position: absolute;
-  right: 0;
-  text-align: center;
-  top: 0;
-  width: 70px;
-  text-decoration: none;
-  &:hover {
-    color: #000;
-    cursor: pointer;
   }
 }
   

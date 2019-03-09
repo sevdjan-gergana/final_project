@@ -38,7 +38,8 @@ class GenresModal extends React.Component {
             window.localStorage.setItem(user.username, JSON.stringify(user));
 
         }
-        
+        this.props.handleModalClose();
+        window.location.reload();
     }
 
 

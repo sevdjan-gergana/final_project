@@ -13,7 +13,6 @@
         font-size:2em;
         box-sizing: border-box;
         border-bottom: 2px solid #eeede8;
-        box-sizing: border-box;
         .Logo{
             margin-top: 10px;
             width: 160px;
@@ -21,12 +20,12 @@
         .NavButtons{
             height: 100%;
             width: 20%;
+            min-width: 200px;
             margin: 0px;
             Button{
                 position: relative;
                 top: -5px;
                 height: 110%;
-                width: 48%;
                 min-width: 90px;
                 margin: 0px;
                 border-radius: 0px;
@@ -48,6 +47,7 @@
             height: 100%;
             width: 20%;
             display: flex;
+            justify-content: flex-end;
             .Profile{
                 padding: 0px 5px;
                 box-sizing: border-box;
