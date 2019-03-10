@@ -2,7 +2,6 @@ import React from 'react';
 import classes from './GenresModal.module.scss';
 import Button from '../UI/Button/Button.js';
 
-
 class GenresModal extends React.Component {
 
     constructor(props) {
@@ -15,32 +14,55 @@ class GenresModal extends React.Component {
                 "Science", "Science Fiction", "Self Help", "Suspense", "Spirituality", "Sports", "Thriller", "Travel"
             ].sort(),
             selectedGenres: [],
+            userGenres: {},
         };
         this.hendleCheckboxClicked = this.hendleCheckboxClicked.bind(this);
         this.selectGenres = this.selectGenres.bind(this);
+        this.isChecked = this.isChecked.bind(this);
     }
 
     hendleCheckboxClicked(e) {
-        if (this.state.selectedGenres.indexOf(e.target.value) !== -1) {
-            this.state.selectedGenres = this.state.selectedGenres.filter(genre => genre !== e.target.value);
+        // e.preventDefault();
+        if (this.state.selectedGenres.indexOf(e.target.value) !== -1 || this.state.userGenres.indexOf(e.target.value) !== -1) {
+            let selects = this.state.selectedGenres.filter(genre => genre !== e.target.value);
+            // this.setState({ selectedGenres: this.state.selectedGenres.filter(genre => genre !== e.target.value) })
+            this.setState({ selectedGenres: selects });
         } else {
             this.state.selectedGenres.push(e.target.value);
         }
         console.log(this.state.selectedGenres);
     }
 
-    selectGenres(e){
+    selectGenres(e) {
         e.preventDefault();
-        const user = JSON.parse(window.localStorage.getItem(window.sessionStorage.getItem("user")));
-        if(user){
-            user.genres = this.state.selectedGenres;
-            window.localStorage.setItem(user.username, JSON.stringify(user));
-        }
+        let user = JSON.parse(window.localStorage.getItem(window.sessionStorage.getItem("user")));
+
+        this.setState({userGenres:this.state.userGenres.concat(this.state.selectedGenres)});
+        // this.state.userGenres = this.state.userGenres.concat(this.state.selectedGenres);
+        console.log(this.state.userGenres);
+        // console.log(this.state.selectedGenres);
+        user.genres = this.state.userGenres;
+        window.localStorage.setItem(user.username, JSON.stringify(user));
+
         this.props.handleModalClose();
         window.location.reload();
     }
 
+    isChecked(name) {
+        let user = JSON.parse(window.localStorage.getItem(window.sessionStorage.getItem("user")));
+        let userGenres = user.genres;
+        return (userGenres.indexOf(name) !== -1);
+    }
+
+    componentDidMount() {
+        let user = JSON.parse(window.localStorage.getItem(window.sessionStorage.getItem("user")));
+        let userGenres = user.genres;
+        this.setState({ userGenres });
+        this.setState({ selectedGenres: userGenres });
+    }
+
     render() {
+
         return (
             <div className={classes.ModalWindow}>
                 <div>
@@ -50,10 +72,17 @@ class GenresModal extends React.Component {
                         <form onSubmit={this.selectGenres}>
                             <div className={classes.CheckList}>
                                 {this.state.genres.map((genre, i) => {
-                                    return <label>
-                                        <input type="checkbox" onClick={this.hendleCheckboxClicked} name={genre} value={genre} />
-                                        {genre}
-                                    </label>
+                                    if (this.isChecked(genre)) {
+                                        return <label key={i}>
+                                            <input type="checkbox" onClick={this.hendleCheckboxClicked} name={genre} value={genre} defaultChecked />
+                                            {genre}
+                                        </label>
+                                    } else {
+                                        return <label>
+                                            <input type="checkbox" onClick={this.hendleCheckboxClicked} name={genre} value={genre} />
+                                            {genre}
+                                        </label>
+                                    }
                                 })}
                             </div>
                             <div className={classes.SubmitButton} >

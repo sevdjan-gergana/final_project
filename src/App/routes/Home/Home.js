@@ -3,7 +3,6 @@ import Footer from '../../../Footer/Footer';
 import BookList from '../../../BookList/BookList';
 import Aside from '../../../HomeAside/AsideComponent.js';
 import Loader from '../../../Loader/LoaderComponent.js';
-import GenresModal from '../../../GenresModal/GenresModalComponent';
 import classes from './Home.module.scss';
 
 class HomeComponent extends React.Component {

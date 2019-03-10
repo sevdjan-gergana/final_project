@@ -1,5 +1,4 @@
 import React from 'react';
-import classes from './SearchArea.modules.scss';
 import Input from '../Input/Input.js';
 import Button from '../Button/Button.js'; 
 
