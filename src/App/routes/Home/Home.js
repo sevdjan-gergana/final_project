@@ -1,6 +1,6 @@
 import React from 'react';
 import Footer from '../../../Footer/Footer';
-import BookList from '../../../BookList/BookList';
+import BookListGenres from '../../../BookList/BookListGenres';
 import Aside from '../../../HomeAside/AsideComponent.js';
 import Loader from '../../../Loader/LoaderComponent.js';
 import GenresModal from '../../../GenresModal/GenresModalComponent';
@@ -79,7 +79,7 @@ class HomeComponent extends React.Component {
             this.state.loading ? <Loader />
                 : <React.Fragment>
                     <div className={classes.Wrapper}>
-                        <div className={classes.List}><BookList /></div>
+                        <div className={classes.List}><BookListGenres /></div>
                         <div className={classes.Aside}><Aside /></div>
                     </div>
                     <Footer />
