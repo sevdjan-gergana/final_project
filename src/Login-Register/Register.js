@@ -14,6 +14,7 @@ class RegisterComponent extends React.Component {
             passError: false,
             emailError: false,
             validationError: false,
+            isRegistered:false
         };
 
         this.handleUserInput = this.handleUserInput.bind(this);

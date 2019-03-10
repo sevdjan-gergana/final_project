@@ -5,12 +5,14 @@ import classes from './Profile.module.scss';
 import userLogo from '../../../assets/images/user.png';
 import Button from '../../../UI/Button/Button.js';
 import BookList from '../../../BookList/BookList.js';
+import ChangeLogo from '../../../UI/changeLogo';
 
 class ProfileComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             username: '',
+            logoUrl:'',
             shelves: {
                 read: [],
                 reading: [],
@@ -32,12 +34,28 @@ class ProfileComponent extends React.Component {
         this.setState({ showModal: false })
     }
 
+    handleLogo = (e) => {
+        this.setState({ logoUrl: e.target.value })
+        console.log(this.logoUrl);
+    }
+
+  importLogo=(e)=>{
+      e.preventDefault();
+      
+  }
+
+
+
+
+
     render() {
         return (
             <React.Fragment>
                 {this.state.showModal ? <GenresModal handleModalClose={this.handleModalClose} /> : ''}
                 <div className={classes.Wrapper}>
-                    <div><img className={classes.userLogo} src={userLogo} alt="userLogo"></img></div>
+                    <div><img className={classes.userLogo} src={this.state.logoUrl} alt="userLogo"></img>
+                    <ChangeLogo importLogok={this.importLogo} handleLogo={this.handleLogo}></ChangeLogo>
+                    </div>
                     <div className={classes.UserInfo}>
                         <h2>{this.state.username}</h2>
                         <hr />
@@ -54,7 +72,7 @@ class ProfileComponent extends React.Component {
                             <Button title="(edit)" onClick={() => this.setState({ showModal: true })} />
                         </div>
                         <hr />
-                        <div className={classes.GenresList}>{this.state.genres.map((genre, i) => {
+                        <div className={classes.GenresList}>{this.state.genres.map((genre,i) => {
                             return <p className={classes.Genre}>{genre}</p>
                         })}</div>
                     </div>
@@ -70,5 +88,4 @@ class ProfileComponent extends React.Component {
         );
     }
 }
-
 export default ProfileComponent;

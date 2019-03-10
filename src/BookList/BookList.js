@@ -11,7 +11,9 @@ class BookList extends React.Component {
         this.state = {
             books: [],
             searchField: 'dogs',
-            id:''
+            totalItems: 0,
+            noItems:false
+            
         }
         // seearchService.addObserver(this);
     }
@@ -23,6 +25,7 @@ class BookList extends React.Component {
             .then((data) => {
                 console.log(data);
                 this.setState({ books: [...data.body.items] })
+               
             })
     }
 
@@ -42,8 +45,21 @@ class BookList extends React.Component {
             .get('https://www.googleapis.com/books/v1/volumes')
             .query({ q: this.state.searchField })
             .then((data) => {
+                this.setState({totalItems:data.body.totalItems });
+
+                console.log(this.state.totalItems);
+               if (this.state.totalItems ===0){
+                   alert("No items");
+                   this.setState.noItems=true;
+               }else{
                 console.log(data);
                 this.setState({ books: [...data.body.items] })
+                this.setState.noItems=false;
+            }
+                   
+
+                  
+               
             })
     }
 
@@ -51,13 +67,17 @@ class BookList extends React.Component {
         this.setState({ searchField: e.target.value })
     }
 
+
+
     render() {
         return (
             <div>
+
                 <div className={classes.tooBigWrapper}>
                     <SearchArea searchBook={this.searchBook} handleSearch={this.handleSearch} />
 
                     <div className={classes.bigWrapper}>
+              
                         <List books={this.state.books} />
 
                     </div>
