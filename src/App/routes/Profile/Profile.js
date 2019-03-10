@@ -4,6 +4,7 @@ import GenresModal from '../../../GenresModal/GenresModalComponent';
 import classes from './Profile.module.scss';
 import userLogo from '../../../assets/images/user.png';
 import Button from '../../../UI/Button/Button.js';
+import BookList from '../../../BookList/BookList.js';
 
 class ProfileComponent extends React.Component {
     constructor(props) {
@@ -58,6 +59,12 @@ class ProfileComponent extends React.Component {
                         })}</div>
                     </div>
                 </div>
+                    <div className={classes.UserBooks}>
+                        <h3>{this.state.username} is currently reading</h3>
+                        <hr />
+                        <div className={classes.List}><BookList /></div>    
+                        {/* change request for user's books !!!!!!!!!!!!!! */}
+                    </div>
                 <Footer />
             </React.Fragment>
         );

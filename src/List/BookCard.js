@@ -15,8 +15,8 @@ import classes from '../List/BookCard.module.scss'
 
 const BookCard = (props) => {
     function validateTitle(){
-        if(props.title.length > 20){
-            return (props.title.slice(0,20) + "...");
+        if(props.title.length > 15){
+            return (props.title.slice(0,15) + "...");
         }else {
             return props.title;
         }

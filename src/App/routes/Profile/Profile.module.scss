@@ -31,6 +31,7 @@
     .UserFavGenres{
         color: #5e1b17;
         width: 30%;
+        margin-top: 3%;
         h3{
             display: inline;
             margin: 0px;
@@ -57,5 +58,17 @@
                 text-decoration: underline;
             }
         }
+    }
+}
+.UserBooks{
+    color: #5e1b17;
+    width: 60%;
+    margin: 15px auto;
+    h3{
+        text-transform: uppercase;
+        font-size: 0.9em;
+        font-weight: 700;
+        margin: 0px;
+        padding: 0px;
     }
 }
