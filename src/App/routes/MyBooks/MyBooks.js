@@ -23,7 +23,7 @@ class MyBooksComponent extends React.Component {
     }
 
     componentDidMount() {
-        this.timerHandle = setTimeout(() => this.setState({ loading: false }), 1500);
+        this.timerHandle = setTimeout(() => this.setState({ loading: false }), 1000);
     }
 
     render() {

@@ -70,7 +70,8 @@ class HomeComponent extends React.Component {
     // }
 
     componentDidMount() {
-        this.timerHandle = setTimeout(() => this.setState({ loading: false }), 1500);
+        // this.setState({loading:false});
+        this.timerHandle = setTimeout(() => this.setState({ loading: false }), 1000);
     }
 
     render() {

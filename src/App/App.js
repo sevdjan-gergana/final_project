@@ -25,7 +25,7 @@ class App extends Component {
           {isLogged ? <HeaderComponent/> : <LoginComponent onLogin={this.login} />}
             <Route exact path={`/`} component={withRouter(HomeComponent)} />
             <Route exact path={`/myBooks`} component= {withRouter(MyBooksComponent)} />
-            <Route path={`/book/:id`} component={withRouter(BookDetailsComponent)} />
+            <Route exact path={`/book/:id`} component={withRouter(BookDetailsComponent)} />
             {profileRoute}
           </div>
         </BrowserRouter>
