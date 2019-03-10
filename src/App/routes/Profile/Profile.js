@@ -12,7 +12,7 @@ class ProfileComponent extends React.Component {
         super(props);
         this.state = {
             username: '',
-            logoUrl:'',
+            logoUrl: '',
             shelves: {
                 read: [],
                 reading: [],
@@ -30,8 +30,8 @@ class ProfileComponent extends React.Component {
         this.setState({ username, shelves, genres });
     }
 
-    handleModalClose() {
-        this.setState({ showModal: false })
+    handleModalClose(newSelectedGenres) {
+        this.setState({ showModal: false, genres: newSelectedGenres })
     }
 
     handleLogo = (e) => {
@@ -39,22 +39,18 @@ class ProfileComponent extends React.Component {
         console.log(this.logoUrl);
     }
 
-  importLogo=(e)=>{
-      e.preventDefault();
-      
-  }
+    importLogo = (e) => {
+        e.preventDefault();
 
-
-
-
+    }
 
     render() {
         return (
             <React.Fragment>
-                {this.state.showModal ? <GenresModal handleModalClose={this.handleModalClose} /> : ''}
+                {this.state.showModal ? <GenresModal handleModalClose={this.handleModalClose} favoriteGenres={this.state.genres} /> : ''}
                 <div className={classes.Wrapper}>
                     <div><img className={classes.userLogo} src={this.state.logoUrl} alt="userLogo"></img>
-                    <ChangeLogo importLogok={this.importLogo} handleLogo={this.handleLogo}></ChangeLogo>
+                        <ChangeLogo importLogok={this.importLogo} handleLogo={this.handleLogo}></ChangeLogo>
                     </div>
                     <div className={classes.UserInfo}>
                         <h2>{this.state.username}</h2>
@@ -72,17 +68,17 @@ class ProfileComponent extends React.Component {
                             <Button title="(edit)" onClick={() => this.setState({ showModal: true })} />
                         </div>
                         <hr />
-                        <div className={classes.GenresList}>{this.state.genres.map((genre,i) => {
+                        <div className={classes.GenresList}>{this.state.genres.map((genre, i) => {
                             return <p className={classes.Genre}>{genre}</p>
                         })}</div>
                     </div>
                 </div>
-                    <div className={classes.UserBooks}>
-                        <h3>{this.state.username} is currently reading</h3>
-                        <hr />
-                        <div className={classes.List}><BookList /></div>    
-                        {/* change request for user's books !!!!!!!!!!!!!! */}
-                    </div>
+                <div className={classes.UserBooks}>
+                    <h3>{this.state.username} is currently reading</h3>
+                    <hr />
+                    <div className={classes.List}><BookList /></div>
+                    {/* change request for user's books !!!!!!!!!!!!!! */}
+                </div>
                 <Footer />
             </React.Fragment>
         );

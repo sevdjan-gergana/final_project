@@ -50,8 +50,8 @@ class MyBooksComponent extends React.Component {
                             <List books={this.state.books} />
                         </div>
                         {/* <div className={classes.Aside}><Aside /></div> */}
-                        <Footer />
                     </div>
+                    <Footer />
                 </React.Fragment >
         );
     }

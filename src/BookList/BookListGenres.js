@@ -26,39 +26,39 @@ class BookListGenres extends React.Component {
 // };
 
 
-    componentDidMount() {
-        const user = JSON.parse(window.localStorage.getItem(window.sessionStorage.getItem("user")));
-        const { genres }=user;
-        this.setState({genres});
-        console.log(genres);
-        request
-            .get('https://www.googleapis.com/books/v1/volumes')
-            .query({q:this.state.genres[1] })
-            .then((data) => {
-                console.log(data);
-                this.setState({ books: [...data.body.items] })
-            })
+    // componentDidMount() {
+    //     const user = JSON.parse(window.localStorage.getItem(window.sessionStorage.getItem("user")));
+    //     const { genres }=user;
+    //     this.setState({genres});
+    //     console.log(genres);
+    //     request
+    //         .get('https://www.googleapis.com/books/v1/volumes')
+    //         .query({q:this.state.genres[1] })
+    //         .then((data) => {
+    //             console.log(data);
+    //             this.setState({ books: [...data.body.items] })
+    //         })
 
            
         
-    }
+    // }
 
-    componentDidMount() {
-        const user = JSON.parse(window.localStorage.getItem(window.sessionStorage.getItem("user")));
-        const { genres }=user;
-        this.setState({genres});
-        console.log(genres);
-        request
-            .get('https://www.googleapis.com/books/v1/volumes')
-            .query({q:this.state.genres[2] })
-            .then((data) => {
-                console.log(data);
-                this.setState({ books: [...data.body.items] })
-            })
+    // componentDidMount() {
+    //     const user = JSON.parse(window.localStorage.getItem(window.sessionStorage.getItem("user")));
+    //     const { genres }=user;
+    //     this.setState({genres});
+    //     console.log(genres);
+    //     request
+    //         .get('https://www.googleapis.com/books/v1/volumes')
+    //         .query({q:this.state.genres[2] })
+    //         .then((data) => {
+    //             console.log(data);
+    //             this.setState({ books: [...data.body.items] })
+    //         })
 
            
         
-    }
+    // }
     // searchBook = (e) => {
     //     e.preventDefault();
     //     request

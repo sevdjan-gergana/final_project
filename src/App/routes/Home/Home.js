@@ -1,6 +1,7 @@
 import React from 'react';
 import Footer from '../../../Footer/Footer';
 import BookListGenres from '../../../BookList/BookListGenres';
+import BookList from '../../../BookList/BookList';
 import Aside from '../../../HomeAside/AsideComponent.js';
 import Loader from '../../../Loader/LoaderComponent.js';
 import classes from './Home.module.scss';
@@ -10,6 +11,7 @@ class HomeComponent extends React.Component {
         super(props);
         this.state = {
             loading: true,
+            // user: {},
         }
     }
 
@@ -71,6 +73,8 @@ class HomeComponent extends React.Component {
     componentDidMount() {
         // this.setState({loading:false});
         this.timerHandle = setTimeout(() => this.setState({ loading: false }), 1000);
+        // let user = JSON.parse(window.localStorage.getItem(window.sessionStorage.getItem("user")));
+        // this.setState({ user });
     }
 
     render() {
@@ -78,7 +82,8 @@ class HomeComponent extends React.Component {
             this.state.loading ? <Loader />
                 : <React.Fragment>
                     <div className={classes.Wrapper}>
-                        <div className={classes.List}><BookListGenres /></div>
+                     <div className={classes.List}><BookListGenres /></div>
+                                
                         <div className={classes.Aside}><Aside /></div>
                     </div>
                     <Footer />
