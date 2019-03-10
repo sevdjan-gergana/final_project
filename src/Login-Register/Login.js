@@ -5,7 +5,6 @@ import classes from '../Login-Register/Login.module.scss';
 import Authenticate from './authenticate';
 import Button from '../UI/Button/Button.js';
 import Input from '../UI/Input/Input.js';
-import GenresModal from '../GenresModal/GenresModalComponent';
 
 
 class LoginComponent extends React.Component {
@@ -86,7 +85,6 @@ class LoginComponent extends React.Component {
                     </div>
                 </div>
                 <Authenticate />
-                {this.state.showModal ? <GenresModal handleModalClose={this.handleModalClose} /> : ''}
             </React.Fragment>
 
         );
