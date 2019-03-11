@@ -20,7 +20,7 @@ class BookListGenres extends React.Component {
 
         Promise.all(this.state.genres.map(genre => {
             return this.getBooksByGenre(genre)
-                .then((data) => this.setState({ colectionByGenres: [...this.state.colectionByGenres,    {genre:genre, books:[...data.body.items.slice(0, 5)]}]        } ));
+                .then((data) => this.setState({ colectionByGenres: [...this.state.colectionByGenres, { genre: genre, books: [...data.body.items.slice(0, 5)] }] }));
         })).then(setTimeout(() => this.setState({ loading: false }), 1000))
     }
 
@@ -31,7 +31,6 @@ class BookListGenres extends React.Component {
                 .query({ q: genre })
                 .then((data) => {
                     resolve(data);
-
                 })
         });
     }

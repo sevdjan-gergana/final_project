@@ -43,6 +43,14 @@ class MyBooksComponent extends React.Component {
                 : <React.Fragment>
                     <div className={classes.Wrapper}>
                         <div className={classes.List}>
+                            <h2>My Books</h2>
+                            <hr />
+                            {this.state.userBooks.length === 0 ?
+                                <div>
+                                    <h3>Your shelve is empty.</h3>
+                                </div>
+                                : ""
+                            }
                             <List books={this.state.books} />
                         </div>
                     </div>

@@ -6,7 +6,7 @@ import classes from '../List/BookCard.module.scss'
 const BookCard = (props) => {
 
     function validate(name){
-        if(name.length > 15){
+        if(name && name.length > 15){
             return (name.slice(0,15) + "...");
         }else {
             return name;

@@ -62,7 +62,7 @@ class ProfileComponent extends React.Component {
                     </div>
                 </div>
                 <div className={classes.UserBooks}>
-                    <h3>{this.state.username} is currently reading</h3>
+                    <h3>You can find new books here</h3>
                     <hr />
                     <div className={classes.List}><BookList /></div>
                 </div>
