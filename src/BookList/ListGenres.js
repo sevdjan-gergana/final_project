@@ -1,5 +1,4 @@
 import React from 'react';
-// import request from 'superagent';
 import List from '../List/List';
 
 const ListGenres = (props) => {

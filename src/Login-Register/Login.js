@@ -58,8 +58,7 @@ class LoginComponent extends React.Component {
     componentDidMount() {
         this.timerHandle = setTimeout(() => this.setState({ loading: false }), 1500);
     }
-
-
+    
     render() {
         if (this.state.toNav) {
             window.location.reload();

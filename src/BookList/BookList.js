@@ -2,7 +2,6 @@ import React from 'react';
 import SearchArea from '../UI/SearchArea/SearchArea';
 import request from 'superagent';
 import List from '../List/List';
-import classes from '../List/BookCard.module.scss';
 
 class BookList extends React.Component {
     constructor(props) {
@@ -44,17 +43,12 @@ class BookList extends React.Component {
     render() {
         return (
             <div>
-                <div className={classes.tooBigWrapper}>
-                    <SearchArea searchBook={this.searchBook} handleSearch={this.handleSearch} />
-
-                    <div className={classes.bigWrapper}>
-                        {this.state.books.length === 0 ?
-                            <h1>Sorry, search came back empty</h1> : 
-                            <List books={this.state.books} />
-                        }
-                    </div>
-                    <div className={classes.container2}>
-                    </div>
+                <SearchArea searchBook={this.searchBook} handleSearch={this.handleSearch} />
+                <div >
+                    {this.state.books.length === 0 ?
+                        <h1>Sorry, search came back empty</h1> :
+                        <List books={this.state.books} />
+                    }
                 </div>
             </div>
         );

@@ -6,6 +6,9 @@ const List = (props) => {
     return (
         <div className={classes.container}>
             {props.books.map((book, i) => {
+                if(book.error){
+                    return;
+                }
                 return <BookCard
                     key={book.id}
                     id={book.id}

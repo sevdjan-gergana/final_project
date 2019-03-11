@@ -58,7 +58,8 @@ class RegisterComponent extends React.Component {
                 genres: []
             });
             window.localStorage.setItem(username, userinfo);
-            alert("You have successfully registered! Now you can sign in to your account.");
+            window.sessionStorage.setItem('user',username);
+            window.location.reload();
         }
     }
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import request from 'superagent';
 import ListGenres from './ListGenres.js';
-import Loader from '../Loader/LoaderComponent';
 import classes from '../BookList/BookList.module.scss';
 
 class BookListGenres extends React.Component {
@@ -16,8 +15,6 @@ class BookListGenres extends React.Component {
     }
 
     componentDidMount() {
-
-
         Promise.all(this.state.genres.map(genre => {
             return this.getBooksByGenre(genre)
                 .then((data) => this.setState({ colectionByGenres: [...this.state.colectionByGenres, { genre: genre, books: [...data.body.items.slice(0, 5)] }] }));
@@ -37,8 +34,7 @@ class BookListGenres extends React.Component {
 
     render() {
         return (
-            this.state.loading ? <Loader />
-                : <div>
+             <div>
                     <h2 className={classes.rec}>Recommended for you</h2>
                     {this.state.genres.length === 0 ?
                         <div>
@@ -49,7 +45,7 @@ class BookListGenres extends React.Component {
                         </div>
                         : ""
                     }
-                    {this.state.colectionByGenres.map((colection, i) => <ListGenres genre={colection.genre} books={colection.books} />)}
+                    {this.state.colectionByGenres.map((colection, i) => <ListGenres key={colection.genre} genre={colection.genre} books={colection.books} />)}
                 </div>
         )
     }

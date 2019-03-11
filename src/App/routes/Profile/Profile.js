@@ -57,7 +57,7 @@ class ProfileComponent extends React.Component {
                         </div>
                         <hr />
                         <div className={classes.GenresList}>{this.state.genres.map((genre, i) => {
-                            return <p className={classes.Genre}>{genre}</p>
+                            return <p key={genre} className={classes.Genre}>{genre}</p>
                         })}</div>
                     </div>
                 </div>

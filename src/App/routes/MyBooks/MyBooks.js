@@ -39,13 +39,13 @@ class MyBooksComponent extends React.Component {
 
     render() {
         return (
-            this.state.loading ? <Loader />
+            this.state.loading ? <Loader className={classes.Loader}/>
                 : <React.Fragment>
                     <div className={classes.Wrapper}>
                         <div className={classes.List}>
                             <h2>My Books</h2>
                             <hr />
-                            {this.state.userBooks.length === 0 ?
+                            {this.state.books.length === 0 ?
                                 <div>
                                     <h3>Your shelve is empty.</h3>
                                 </div>

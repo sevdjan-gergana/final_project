@@ -1,8 +1,9 @@
 .book{
     display:inline-block;
-    width:17%;
-    height:40%;
+    width:16%;
+    height:35vh;
     margin:1%;
+    padding: 5px;
     overflow:hidden;
     border-radius: 10px;
     background-color: white;
@@ -36,5 +37,32 @@
     }
     a:hover {
         text-decoration: underline;
+    }
+}
+
+.container{
+
+}
+
+@media screen and ( max-width: 600px){
+    .container{ 
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .book{
+        // display: block;
+        // clear: both;
+        width: 97%;
+        height: 35vh;
+        margin: 0px;
+        margin: 10px 0px;
+        .imgBox{
+            margin: 10px;
+            .img{
+                min-height: 30vw;
+                min-width: 20vw;
+            }
+        }
     }
 }

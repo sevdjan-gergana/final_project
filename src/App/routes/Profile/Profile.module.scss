@@ -11,7 +11,7 @@
     .UserInfo{
         color: #5e1b17;
         margin: 0px 4% 0px 3%;
-        width: 30%;
+        width: 40vw;
         padding: 0px 4%;
         border-right: 1px solid lightgray;
         h2{
@@ -30,7 +30,7 @@
     }
     .UserFavGenres{
         color: #5e1b17;
-        width: 30%;
+        width: 40vw;
         margin-top: 3%;
         h3{
             display: inline;
@@ -70,5 +70,28 @@
         font-weight: 700;
         margin: 0px;
         padding: 0px;
+    }
+}
+
+@media screen and ( max-width: 1200px){
+    .Wrapper{
+        width: 90%;
+        // flex-direction: column;
+    }
+    .UserBooks{
+        width: 90%;
+    }
+}
+
+@media screen and ( max-width: 600px){
+    .Wrapper{
+        width: 95%;
+        // margin: 15px;
+        flex-direction: column;
+        font-size: 0.9em;
+        .UserInfo{
+            border-right:none;
+            width: 95%;
+        }
     }
 }

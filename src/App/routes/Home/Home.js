@@ -17,12 +17,12 @@ class HomeComponent extends React.Component {
     }
 
     componentDidMount() {
-        this.timerHandle = setTimeout(() => this.setState({ loading: false }), 1000);
+        this.timerHandle = setTimeout(() => this.setState({ loading: false }), 1500);
     }
 
     render() {
         return (
-            this.state.loading ? <Loader />
+            this.state.loading ? <Loader className={classes.Loader}/>
                 : <React.Fragment>
                     {this.state.logged ?
                         <div className={classes.Wrapper}>

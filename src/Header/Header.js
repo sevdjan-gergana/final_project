@@ -33,6 +33,7 @@ class HeaderComponent extends React.Component {
                     <div className={classes.NavButtons}>
                         <NavLink to='/'><Button title="Home" /> </NavLink>
                         <NavLink to='/myBooks'> <Button title="My Books" /></NavLink>
+                        <NavLink to='/search'> <Button title="Search" /></NavLink>
                     </div>
                     <div className={classes.ProfileButtons}>
                         <NavLink to='/profile' ><div className={classes.Profile}><img className={classes.User} src={profileLogo} alt="profile" /></div></NavLink>
