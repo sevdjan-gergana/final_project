@@ -21,7 +21,7 @@ class GenresModal extends React.Component {
 
     hendleCheckboxClicked(e) {
         if (this.state.selectedGenres.indexOf(e.target.value) !== -1) {
-            this.state.selectedGenres = this.state.selectedGenres.filter(genre => genre !== e.target.value);
+            this.setState({selectedGenres: this.state.selectedGenres.filter(genre => genre !== e.target.value)});
         } else {
             this.state.selectedGenres.push(e.target.value);
         }
@@ -42,13 +42,13 @@ class GenresModal extends React.Component {
         return (
             <div className={classes.ModalWindow}>
                 <div>
-                    <div title="Close" className={classes.ModalClose} onClick={() => this.props.handleModalClose()}>Close</div>
+                    <div title="Close" className={classes.ModalClose} onClick={() => this.props.handleModalClose(this.props.favoriteGenres.slice())}>Close</div>
                     <h1>Choose your favorites genres</h1>
                     <div>
                         <form onSubmit={this.selectGenres}>
                             <div className={classes.CheckList}>
                                 {genres.map((genre, i) => {
-                                    return <label>
+                                    return <label key={genre}>
                                         <input type="checkbox" onClick={this.hendleCheckboxClicked} name={genre} value={genre}
                                         defaultChecked={this.state.selectedGenres.indexOf(genre)===-1?false:true}/>
                                         {genre}

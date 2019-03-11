@@ -1,11 +1,8 @@
 import React from 'react';
 import Footer from '../../../Footer/Footer';
-import Aside from '../../../HomeAside/AsideComponent.js';
 import classes from './MyBooks.module.scss';
 import Loader from '../../../Loader/LoaderComponent.js';
 import List from '../../../List/List.js';
-
-
 
 class MyBooksComponent extends React.Component {
     constructor(props) {
@@ -32,7 +29,6 @@ class MyBooksComponent extends React.Component {
         userBooks.forEach(id => {
             this.getBook(id);
         });
-        console.log(this.state.books);
     }
 
     async getBook(id) {
@@ -49,7 +45,6 @@ class MyBooksComponent extends React.Component {
                         <div className={classes.List}>
                             <List books={this.state.books} />
                         </div>
-                        {/* <div className={classes.Aside}><Aside /></div> */}
                     </div>
                     <Footer />
                 </React.Fragment >

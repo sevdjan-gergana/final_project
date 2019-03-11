@@ -2,7 +2,6 @@ import React from 'react';
 import Footer from '../../../Footer/Footer';
 import classes from '../Book/BookDetails.module.scss';
 
-
 class BookDetailsComponent extends React.Component {
 
     constructor(props) {
@@ -21,7 +20,7 @@ class BookDetailsComponent extends React.Component {
                     }
                 }
             },
-            showErrorMessage: window.sessionStorage.getItem('user') ? true : false,
+            showErrorMessage: false,
         }
         this.handleUserSelect = this.handleUserSelect.bind(this);
     }
@@ -46,7 +45,8 @@ class BookDetailsComponent extends React.Component {
         user.shelves.reading = user.shelves.reading.filter((book) => book !== this.state.book.id);
         user.shelves.will = user.shelves.will.filter((book) => book !== this.state.book.id);
 
-        if (shelve !== 'remove') {
+        if (shelve !== 'remove' && shelve !== 'placeholder') {
+            console.log(shelve)
             user.shelves[shelve].push(this.state.book.id);
         }
         window.localStorage.setItem(userName, JSON.stringify(user));
@@ -54,20 +54,19 @@ class BookDetailsComponent extends React.Component {
     }
 
     render() {
-        // console.log(this.state.book.volumeInfo.title);
         return (
             <React.Fragment>
                 <div className={classes.Wrapper}>
                     <div className={classes.imgBox}>
                         <img className={classes.img} src={this.state.book.volumeInfo.imageLinks.small} alt='' />
-                        <select className={classes.button} id="mySelect" onChange={this.handleUserSelect}>
-                            <option disabled hidden value='remove' selected>Add book to shelve</option>
+                        <select className={classes.button} id="mySelect" onChange={this.handleUserSelect} defaultValue='placeholder' >
+                            <option disabled hidden value="placeholder">Add book to shelve</option>
                             <option value="will">Want to read</option>
                             <option value="read">Read</option>
                             <option value="reading">Reading</option>
                             <option value="remove">Remove from shelve</option>
                         </select>
-                        {this.state.showErrorMessage?<p className={classes.errMsg}>You must be log in to do that</p>:''}
+                        {this.state.showErrorMessage?<p className={classes.errMsg}>You must be log in to add book in shelve</p>:''}
                         
                     </div>
                     <div className={classes.infoBox}>

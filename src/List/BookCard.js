@@ -3,36 +3,28 @@ import { NavLink } from 'react-router-dom';
 import classes from '../List/BookCard.module.scss'
 
 
-//  getID=(e)=>{
-//         alert('getting ID');
-//     }
-// function returnBook=(e)=>{
-//     const id=this.props.id;
-
-//     return 'book/'+id;
-
-//      }
-
 const BookCard = (props) => {
-    function validateTitle(){
-        if(props.title.length > 15){
-            return (props.title.slice(0,15) + "...");
+
+    function validate(name){
+        if(name.length > 15){
+            return (name.slice(0,15) + "...");
         }else {
-            return props.title;
+            return name;
         }
     }
 
     const url = 'book/' + props.id;
     return (
         <React.Fragment>
-            <div className={classes.book}>
-                <div className={classes.imgBox}>
+            <div className={classes.book}  key={props.id}>
+                <div className={classes.imgBox} >
                     <NavLink to={url}><img className={classes.img} src={props.image} alt='' /></NavLink>
                 </div>
-                <>
-                    <NavLink to={url}><h2>{validateTitle()}</h2></NavLink>
-                    <NavLink to={url}><p>{props.published}</p></NavLink>
-                </>
+                <div>
+                    <NavLink to={url}><h2>{validate(props.title)}</h2></NavLink>
+                    <p>{validate(props.author)}</p>
+                    <p>{props.published}</p>
+                </div>
             </div>
         </React.Fragment>
     )

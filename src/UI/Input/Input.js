@@ -24,7 +24,7 @@ const input = props => {
                     <option value={option.value}>{option.title}</option>
                 ))}
             </select>);
-        default: console.log("Unlisted type of input");
+        default: ;
     }
 
     return (<input

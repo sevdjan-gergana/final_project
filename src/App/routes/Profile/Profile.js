@@ -5,7 +5,6 @@ import classes from './Profile.module.scss';
 import userLogo from '../../../assets/images/user.png';
 import Button from '../../../UI/Button/Button.js';
 import BookList from '../../../BookList/BookList.js';
-import ChangeLogo from '../../../UI/changeLogo';
 
 class ProfileComponent extends React.Component {
     constructor(props) {
@@ -34,23 +33,12 @@ class ProfileComponent extends React.Component {
         this.setState({ showModal: false, genres: newSelectedGenres })
     }
 
-    handleLogo = (e) => {
-        this.setState({ logoUrl: e.target.value })
-        console.log(this.logoUrl);
-    }
-
-    importLogo = (e) => {
-        e.preventDefault();
-
-    }
-
     render() {
         return (
             <React.Fragment>
                 {this.state.showModal ? <GenresModal handleModalClose={this.handleModalClose} favoriteGenres={this.state.genres} /> : ''}
                 <div className={classes.Wrapper}>
-                    <div><img className={classes.userLogo} src={this.state.logoUrl} alt="userLogo"></img>
-                        <ChangeLogo importLogok={this.importLogo} handleLogo={this.handleLogo}></ChangeLogo>
+                    <div><img className={classes.userLogo} src={userLogo} alt="userLogo"></img>
                     </div>
                     <div className={classes.UserInfo}>
                         <h2>{this.state.username}</h2>
@@ -77,7 +65,6 @@ class ProfileComponent extends React.Component {
                     <h3>{this.state.username} is currently reading</h3>
                     <hr />
                     <div className={classes.List}><BookList /></div>
-                    {/* change request for user's books !!!!!!!!!!!!!! */}
                 </div>
                 <Footer />
             </React.Fragment>

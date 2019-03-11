@@ -4,6 +4,7 @@ import BookListGenres from '../../../BookList/BookListGenres';
 import BookList from '../../../BookList/BookList';
 import Aside from '../../../HomeAside/AsideComponent.js';
 import Loader from '../../../Loader/LoaderComponent.js';
+import Authenticate from '../../../Login-Register/authenticate';
 import classes from './Home.module.scss';
 
 class HomeComponent extends React.Component {
@@ -11,7 +12,7 @@ class HomeComponent extends React.Component {
         super(props);
         this.state = {
             loading: true,
-            // user: {},
+            logged: window.sessionStorage.getItem("user") ? true : false,
         }
     }
 
@@ -71,21 +72,26 @@ class HomeComponent extends React.Component {
     // }
 
     componentDidMount() {
-        // this.setState({loading:false});
         this.timerHandle = setTimeout(() => this.setState({ loading: false }), 1000);
-        // let user = JSON.parse(window.localStorage.getItem(window.sessionStorage.getItem("user")));
-        // this.setState({ user });
     }
 
     render() {
         return (
             this.state.loading ? <Loader />
                 : <React.Fragment>
-                    <div className={classes.Wrapper}>
-                     <div className={classes.List}><BookListGenres /></div>
-                                
-                        <div className={classes.Aside}><Aside /></div>
-                    </div>
+                    {this.state.logged ?
+                        <div className={classes.Wrapper}>
+                            <div className={classes.List}><BookListGenres /></div>
+                        </div>
+                        : <>
+                            <div className={classes.authenticate}><Authenticate /></div>
+                            <div className={classes.Wrapper}>
+                                <div className={classes.List}><BookList /></div>
+                                <div className={classes.Aside}><Aside /></div>
+                            </div>
+                        </>
+                    }
+
                     <Footer />
                 </React.Fragment>
         );

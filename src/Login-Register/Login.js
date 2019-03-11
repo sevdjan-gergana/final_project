@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
 import classes from '../Login-Register/Login.module.scss';
-import Authenticate from './authenticate';
 import Button from '../UI/Button/Button.js';
 import Input from '../UI/Input/Input.js';
 
@@ -84,7 +83,6 @@ class LoginComponent extends React.Component {
                         </div>
                     </div>
                 </div>
-                <Authenticate />
             </React.Fragment>
 
         );
